@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import styles from './App.module.css';
 import Person from "./Person/Person";
-import './App.css';
-import Radium , { StyleRoot } from "radium";
 
 
 class App extends Component {
@@ -60,11 +59,6 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
-      ":hover": {
-        backgroundColor: "lightgreen",
-        color: "black"
-      }
-
     };
 
     let persons = null;
@@ -85,25 +79,22 @@ class App extends Component {
       );
 
       style.backgroundColor="Red";
-      style[":hover"] = {
-        backgroundColor: "salmon",
-        color: "black"
-      }
-    }
+      
+        }
 
     let classes = [];
     if (this.state.persons.length <= 2){
-      classes.push("red"); // classes = ["red"]
+      classes.push(styles.Red); // classes = ["red"]
     }
     if (this.state.persons.length <= 1){
-      classes.push("bold"); // classes are red and bold
+      classes.push(styles.Bold); // classes are red and bold
     }
 
 
 
     return (
-      <StyleRoot>
-      <div className="App">
+      
+      <div className={styles.App}>
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(" ")}>This is really working!</p>
 
@@ -111,14 +102,14 @@ class App extends Component {
         onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-      </StyleRoot>
+      
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
 
-export default Radium(App);
+export default App;
 
 
 /// Radium allows you to use inline styles with features like media queries

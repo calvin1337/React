@@ -2,10 +2,14 @@
   text-align: center;
 }
 
-.red{
+.Red{
   color:red;
 }
 
-.bold{
+.Bold{
   font-weight: bold;
+}
+
+.Header{
+  background-color: blue;
 }
