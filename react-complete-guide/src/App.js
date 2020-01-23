@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Person from "./Person/Person";
 import './App.css';
-import Radium from "radium"
+import Radium , { StyleRoot } from "radium";
 
 
 class App extends Component {
@@ -102,6 +102,7 @@ class App extends Component {
 
 
     return (
+      <StyleRoot>
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(" ")}>This is really working!</p>
@@ -110,6 +111,7 @@ class App extends Component {
         onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
+      </StyleRoot>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
@@ -117,3 +119,6 @@ class App extends Component {
 
 
 export default Radium(App);
+
+
+/// Radium allows you to use inline styles with features like media queries
