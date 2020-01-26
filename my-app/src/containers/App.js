@@ -5,6 +5,14 @@ import Persons from "../components/Persons/Persons"
 import Cockpit from "../components/Cockpit/Cockpit"
 
 class App extends Component {
+  
+  constructor(props){
+  super(props);
+  console.log("[App.js] constructor");
+  
+  }
+
+
   state = {
     persons: [
       { id:"ijjok",name: 'Calvin', age: 22 },
@@ -14,6 +22,15 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false
   };
+
+  static getDerivedStateFromProps(props, state){
+    console.log("[App.js] getDerivedStateFrom Props", props)
+    return state;  
+  }
+
+  componentDidMount(){
+    console.log("[App.js] componentDidMount")
+  }
 
   nameChangedHandler = ( event, id) => {
 
@@ -53,6 +70,8 @@ class App extends Component {
 
   render() {
     
+    console.log("[app.js] render")
+
     let persons = null;
 
     if ( this.state.showPersons ) {
@@ -74,6 +93,7 @@ class App extends Component {
       
       <div className={styles.App}>
         <Cockpit 
+        title={this.props.appTitle}
         showPersons={this.state.showPersons} 
         persons={this.state.persons}
         clicked={this.togglePersonsHandler} />
