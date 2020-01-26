@@ -9,6 +9,7 @@ class Persons extends Component{
     // return state;
     //}
 
+    
   shouldComponentUpdate(nextProps, nextState){
     console.log(["Persons.js] shouldComponentUpdate"])
     return true;
@@ -16,11 +17,13 @@ class Persons extends Component{
 
   getSnapshotBeforeUpdate(prevProps, prevState){
     console.log("[Persons.js] getSnapshotBeforeUpdate")
-    return null;
+    return { message: "Snapshot!"}
   }
 
-componentDidUpdate(){
+  // Hook that will be used most often 
+componentDidUpdate(prevProps, prevState, snapshot){
   console.log("[Persons.js] ")
+  console.log(snapshot);
 }
 
   render(){
@@ -35,7 +38,6 @@ componentDidUpdate(){
         changed={(event) => this.props.changed(event, person.id)}></Person>
         )
       });
-
     }
   }
   
