@@ -3,8 +3,8 @@ import styles from './App.module.css';
 // import Person from "../components/Persons/Person/Person";
 import Persons from "../components/Persons/Persons"
 import Cockpit from "../components/Cockpit/Cockpit"
-import WithClass from "../hoc/WithClass"
-
+import withClass from "../hoc/WithClass"
+import Aux from "../hoc/Aux"
 
 class App extends Component {
   
@@ -102,8 +102,7 @@ class App extends Component {
 
 
     return (
-      
-      <WithClass classes={styles.App}>
+      <Aux>
         <button onClick={() => {this.setState({showCockpit: false})}}>Remove Cockpit</button>
         {this.state.showCockpit ? (
         <Cockpit 
@@ -113,7 +112,7 @@ class App extends Component {
         clicked={this.togglePersonsHandler} />
     ) : null}
         {persons}
-      </WithClass>
+      </Aux>
       
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
@@ -121,7 +120,7 @@ class App extends Component {
 }
 
 
-export default App;
+export default withClass(App, styles.App);
 
 
 /// Radium allows you to use inline styles with features like media queries
