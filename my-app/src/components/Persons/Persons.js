@@ -1,5 +1,4 @@
 import React, {PureComponent} from "react"
-
 import Person from "./Person/Person"
 
 
@@ -49,7 +48,8 @@ componentWillUnmount(){
         key={person.id}
         name={person.name} 
         age={person.age} 
-        changed={(event) => this.props.changed(event, person.id)}></Person>
+        changed={(event) => this.props.changed(event, person.id)}
+        ></Person>
         )
       });
     }
