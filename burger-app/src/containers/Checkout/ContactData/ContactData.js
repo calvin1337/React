@@ -69,9 +69,14 @@ class ContactData extends Component {
     orderHandler = (event) => {
         event.preventDefault();
         this.setState({loading:true});
+        const formData = {};
+        for(let formElementIdentifier in this.state.orderForm){
+            formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+        }
         const order = {
             ingredients : this.props.ingredients ,
-            price: this.props.price 
+            price: this.props.price,
+            orderData: formData
         }
         axios.post("https://react-my-burger-13a65.firebaseio.com/orders.json", order)
         .then( response => {
@@ -84,6 +89,18 @@ class ContactData extends Component {
 
     }
 
+    inputChangedHandler = (event, inputIdentifier) => {
+        const updatedOrderForm = {
+            ...this.state.orderForm
+        };
+        const updatedFormElement = { 
+            ...updatedOrderForm[inputIdentifier]
+        };
+        updatedFormElement.value = event.target.value;
+        updatedOrderForm[inputIdentifier] = updatedFormElement;
+        this.setState({orderForm: updatedOrderForm});
+    }
+
     render () {
         const formElementsArray = [];
         for(let key in this.state.orderForm){
@@ -94,16 +111,17 @@ class ContactData extends Component {
         }
 
         let form = (
-                    <form>
+                    <form onSubmit={this.orderHandler}>
                     {formElementsArray.map(formElement => (
                         <Input 
                         key={formElement.id}
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
+                        changed={(event) => this.inputChangedHandler(event, formElement.id)}
                         />
                     ))}
-                    <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
+                    <Button btnType="Success">ORDER</Button>
                 </form>
                 );
 
