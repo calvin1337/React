@@ -23,16 +23,24 @@ export const purchaseBurgerStart = () => {
 }
 
 
+
+
 export const purchaseBurger = (orderData) => {
     return dispatch => {
         dispatch(purchaseBurgerStart());
         axios.post("https://react-my-burger-13a65.firebaseio.com/orders.json", orderData)
         .then( response => {
-            dispatch(purchaseBurgerSuccess(response.data, orderData))
+            dispatch(purchaseBurgerSuccess(response.data.name, orderData))
         })
         .catch( error => {
-            dispatch(actionTypes.PURCHASE_BURGER_ERROR(error));
+            dispatch(purchaseBurgerFail(error));
         });
 
     };
 };
+
+export const purchaseInit = () => {
+    return {
+        type: actionTypes.PURCHASE_INIT
+    };
+}
