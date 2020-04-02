@@ -115,6 +115,7 @@ class ContactData extends Component {
         }
 
         this.props.onOrderBurger(order);
+       console.log(order);
        
     }
 
@@ -201,13 +202,14 @@ const mapStateToProps = state => {
     return {
         ings: state.burgerBuilder.ingredients,
         price: state.burgerBuilder.totalPrice,
-        loading: state.order.loading
+        loading: state.order.loading,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onOrderBurger: (orderData) => dispatch(actions.purchaseBurger(orderData))
+        
          };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));
