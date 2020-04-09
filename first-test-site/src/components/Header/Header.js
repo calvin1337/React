@@ -3,7 +3,7 @@ import styles from "./header.module.css";
 
  function Header() {
     return (
-        <div className={styles.header}><h1>First React Based Project</h1></div>
+        <div className={styles.header}><h1>My First React Based Project</h1></div>
 
     )
 }

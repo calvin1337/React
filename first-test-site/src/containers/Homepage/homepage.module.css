@@ -7,9 +7,10 @@ html, body, .gridContainer { height: 100%; margin: 0; }
   grid-template-rows: 1fr;
   grid-template-areas: ". .";
   align-items:center;
-  height:300px;
+  height:auto;
   position: relative;
   align-items: center;
+  background: #cccccc;
 }
 
 .grid{
