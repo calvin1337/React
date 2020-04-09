@@ -9,6 +9,7 @@ height:4rem;
 display:flex;
 justify-content: center;
 align-items: center;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 .active {
@@ -22,6 +23,7 @@ align-items: center;
     text-decoration: none;
     color:#bbb;
     font-weight: bolder;
+    
   }
   
   .navItem  {
@@ -35,5 +37,6 @@ align-items: center;
     color:white;
   }
   
+
 
   

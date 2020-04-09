@@ -1,0 +1,15 @@
+
+h3{
+    text-align: center;
+    margin-top: 150px;
+  }
+
+  .header{
+    background:#eee;
+    height:100px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
