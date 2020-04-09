@@ -7,10 +7,10 @@ import { faFacebook, faTwitter, faGithub, faInstagram } from '@fortawesome/free-
 
         <div style={inlineBlock}>
 
-    <FontAwesomeIcon style={style} icon={faFacebook} size="5x"/>
-    <FontAwesomeIcon style={style} icon={faTwitter} size="5x"/>
-    <FontAwesomeIcon style={style} icon={faGithub} size="5x"/>
-    <FontAwesomeIcon style={style} icon={faInstagram} size="5x"/>
+    <FontAwesomeIcon style={style} icon={faFacebook} size="4x"/>
+    <FontAwesomeIcon style={style} icon={faTwitter} size="4x"/>
+    <FontAwesomeIcon style={style} icon={faGithub} size="4x"/>
+    <FontAwesomeIcon style={style} icon={faInstagram} size="4x"/>
         
         </div>
     )
@@ -20,10 +20,16 @@ export default SocialLinks
 
 
 const style = {
-    color: "#333",
-    margin: "10px"
+    color: "#eee",
+    margin: "10px",
+
 }
 
 const inlineBlock = {
-    display: "inline-block"
+    display: "inline-block",
+    width: "100%" ,
+    margin: "auto" ,
+    textAlign: "center",
+    background: "#222"
+
 }

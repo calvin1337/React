@@ -3,21 +3,24 @@ html, body, .gridContainer { height: 100%; margin: 0; }
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr ;
   grid-template-rows: 1fr;
   grid-template-areas: ". .";
   align-items:center;
-  height:auto;
+  height:70vh;
   position: relative;
   align-items: center;
-  background: #cccccc;
+  background: url(../../imgs/react.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .grid{
     width:100%;
     text-align:center;    
-    border: 1px solid red;
     height:100%;
     align-items: center;
     display:grid;
 }
+
