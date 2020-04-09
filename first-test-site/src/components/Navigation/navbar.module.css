@@ -1,0 +1,39 @@
+
+#navbar{
+width: 100%;
+color: #bbb;
+background: #2e2e2e;
+font-weight: bold;
+letter-spacing: 0.025em;
+height:4rem;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+
+.active {
+    color:blue !important;
+  }
+  
+
+.navItem  {
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+    color:#bbb;
+    font-weight: bolder;
+  }
+  
+  .navItem  {
+   display: inline-block;
+   padding: 0 3em;
+   line-height: 3em;
+  }
+  
+  .navItem:hover {
+    border: white 1px solid;
+    color:white;
+  }
+  
+
+  
