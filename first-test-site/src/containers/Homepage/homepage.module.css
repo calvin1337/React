@@ -1,0 +1,26 @@
+html, body, .gridContainer { height: 100%; margin: 0; }
+
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+  align-items:center;
+  height:300px;
+  position: relative;
+  align-items: center;
+}
+
+.grid{
+    width:100%;
+    text-align:center;    
+    border: 1px solid red;
+    height:100%;
+    align-items: center;
+    display:grid;
+}
+
+.icons{
+    color:#333 !important;
+}
