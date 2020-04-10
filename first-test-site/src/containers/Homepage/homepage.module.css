@@ -1,27 +1,40 @@
-html, body, .gridContainer { height: 100%; margin: 0; }
-
-
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
+  gap: 1px 1px;
   grid-template-areas: ". .";
-  align-items:center;
-  height:70vh;
-  position: relative;
+  height: calc(100vh - 4rem);
+  justify-items: center;
   align-items: center;
-  background: url(../../imgs/react.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  
+  background: #222222
+}
+
+.aboutText{
+  text-align: left !important;
+  display: block;
+  justify-items: left !important;
+  width: 100%;
   
 }
 
-.grid{
-    width:100%;
-    text-align:center;    
-    height:100%;
-    align-items: center;
-    display:grid;
+.headerText{
+  width:90%;
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
 }
 
+.subText{
+  display: block;
+  color: #92A1CF;
+  padding-top:50px;
+  font-family: sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color:#92A1CF;
+  font-family: sans-serif;
+}

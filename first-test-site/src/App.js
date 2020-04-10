@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from "./components/Navigation/Navbar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
 import Homepage from "./containers/Homepage/Homepage";
 import About from "./containers/About/About";
 import './App.css';
@@ -13,7 +12,6 @@ function App() {
       <Navbar />
       <Route path="/" exact render={props => (
         <React.Fragment>
-        <Header />
         <Homepage />
         </React.Fragment>
       )} />

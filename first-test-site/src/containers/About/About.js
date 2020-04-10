@@ -1,28 +1,26 @@
 import React from 'react'
-import style from "./about.module.css"
-import PersonalPicture from "../../components/PersonalPicture/PersonalPicture"
-import {Link} from "react-router-dom"
-import SocialLinks from "../../components/SocialLinks/SocialLinks";
+import style from "./about.module.css";
 
  function About() {
     return (
-        <div className={style.gridContainer}>
+        <div>   
+            <div className={style.gridContainer}>
+                
+                <div className={style.Intro}>
 
-        <div>
-            <PersonalPicture />
-            <SocialLinks />
+                Hello world
 
-
-        </div>
-
-        <div className={style.aboutText}>
-            <h1 className={style.headerText}>Hello my name Is Calvin Donaldson this Is my first react based project!</h1>
-            <h2 className={style.subText}>Find out more what I plan on adding to this project by <Link to ='/href' >clicking here</Link> </h2>
-
-        </div>        
-        
+                </div>
+            
+            
+            <div className={style.Example1}>Hello</div>
+            <div className={style.Example2}>World</div>
+            <div className={style.Example3}>Test</div>
+            
+            </div>
+            
         </div>
     )
 }
 
-export default About;
+export default About

@@ -1,40 +1,16 @@
 .gridContainer {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    gap: 1px 1px;
-    grid-template-areas: ". .";
-    height: calc(100vh - 4rem);
-    justify-items: center;
-    align-items: center;
-    
-    background: #222222
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Intro Intro Intro" "Example-1 Example-2 Example-3";
+  height:calc(100vh - 4rem);
+}
 
-  .aboutText{
-    text-align: left !important;
-    display: block;
-    justify-items: left !important;
-    width: 100%;
-    
-  }
+.Intro { grid-area: Intro; }
 
-  .headerText{
-    width:90%;
-    font-size: 4rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-  }
+.Example1 { grid-area: Example-1; }
 
-  .subText{
-    display: block;
-    color: #92A1CF;
-    padding-top:50px;
-    font-family: sans-serif;
-  }
+.Example2 { grid-area: Example-2; }
 
-  a{
-    text-decoration: none;
-    color:#92A1CF;
-    font-family: sans-serif;
-  }
+.Example3 { grid-area: Example-3; }
