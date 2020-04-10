@@ -14,6 +14,7 @@ html, body, .gridContainer { height: 100%; margin: 0; }
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 
 .grid{

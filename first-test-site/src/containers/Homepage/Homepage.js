@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./homepage.module.css";
 import SocialLinks from "../../components/SocialLinks/SocialLinks";
 import PersonalPicture from "../../components/PersonalPicture/PersonalPicture";
+
 function Homepage() {
     return (
         <React.Fragment>

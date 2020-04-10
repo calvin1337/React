@@ -3,6 +3,7 @@ import Navbar from "./components/Navigation/Navbar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Homepage from "./containers/Homepage/Homepage";
+import About from "./containers/About/About";
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         </React.Fragment>
       )} />
       <Route path="/about" render={props => (
-        <div>ABOUT</div>
+        <About />
       )} />
       <Route path="/blog" render={props => (
         <div>BLOG</div>
