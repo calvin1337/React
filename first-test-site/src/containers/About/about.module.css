@@ -1,16 +1,77 @@
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
   gap: 1px 1px;
   grid-template-areas: "Intro Intro Intro" "Example-1 Example-2 Example-3";
   height:calc(100vh - 4rem);
+  background: #f1f1f4;
 }
 
-.Intro { grid-area: Intro; }
+.Intro { 
+  
+  grid-area: Intro; 
+  
+  border: solid red 1px
+}
 
-.Example1 { grid-area: Example-1; }
+.Example1 { 
+  grid-area: Example-1; 
+  padding: 25px;
+  text-align: center;
+  height: 100%;
+}
 
-.Example2 { grid-area: Example-2; }
 
-.Example3 { grid-area: Example-3; }
+.Example2 { 
+  grid-area: Example-2; 
+  border: solid blue 1px;
+  margin: 50px;
+}
+
+.Example3 { 
+  grid-area: Example-3; 
+  border: solid purple 1px;
+  margin: 50px;
+}
+
+
+.card {
+  border: 1px solid #cccccc;
+  height:100%;
+  background: white;
+
+}
+
+h2{
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+figure {
+  height: 200px;
+  width: 100% ;
+  
+}
+
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin: -1rem;
+}
+
+.button{
+  margin-top: auto;
+  background: #042557;
+  color:#fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 800;
+  text-align: center;
+  padding: 15px;
+  width: 80%;
+  display:inline-block;
+  justify-items: start;
+  margin-top:20px;
+}
