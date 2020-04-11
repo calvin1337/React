@@ -1,0 +1,72 @@
+.postDate {
+    display: block;
+    width: 45px;
+    height: 53px;
+    margin: -13px 0px 0px 0px;
+    padding: 0px auto 20px auto;
+    position: solid;
+    float: left;
+  }
+  
+  .dateDay {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    text-align: center;
+    margin: 10px 0px 15px 0px;
+    padding: 8px 10px 20px 10px;
+    text-transform: uppercase;
+  }
+  
+  .dateMonth {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    text-align: center;
+    margin: -35px 0px 0px 0px;
+    padding: 0px 10px 10px 10px;
+    text-transform: uppercase;
+  }
+  
+  .postHeading {
+    background: #eee;
+    width: 75%;
+    padding: 1px 20px 1px 20px;
+    margin: 20px auto 1px auto;
+  }
+  
+  .postTitle {
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: #222;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    padding: 0px 45px 0px 0px;
+  }
+  
+  .postContent {
+    display: block;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    color: #999;
+    background: #eee;
+    line-height: 140%;
+    width: 75%;
+    height: auto;
+    padding: 5px 20px 30px 20px;
+    margin: 0px auto 40px auto;
+  }
+  
+  .postInfo {
+    font-size: 12px;
+    color: #ccc;
+    float: right;
+    padding: 10px 0px 0px 0px;
+    margin: -15px 0px 0px 0px;
+  }
+  
+
+  .post {
+      width: 100%;
+  }

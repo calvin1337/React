@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./blog.module.css"
-
+import BlogPost from "../../components/BlogPost/BlogPost";
 function Blog() {
     return (
 
@@ -12,8 +12,9 @@ function Blog() {
 
 
         <div className={style.BlogMainContent}>  
-        
-        <h1>Sample Blog Post</h1>  
+        <BlogPost />
+        <BlogPost />
+        <BlogPost />
         
         
         </div>
@@ -21,7 +22,13 @@ function Blog() {
         
         
         
-        <div className={style.BlogSideBar}> <h1>Blog SideBar</h1></div>
+        <div className={style.BlogSideBar}> 
+             <div> 
+            <h4>*LINKS TO POSTS*</h4>
+            <h4>*LINKS TO POSTS*</h4>
+            <h4>*LINKS TO POSTS*</h4>
+            </div>
+        </div>
         </div>
         </React.Fragment>
     )

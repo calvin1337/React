@@ -43,12 +43,19 @@
       justify-content: center;
       display:grid;
       width: 100%;
-
+    position: relative;
     }
 
     .BlogSideBar h1 {
         border: 1px solid purple;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     
+    .BlogSideBar h4{
+        position: relative;
+        margin: 20px;
+        display: grid;
+    }
