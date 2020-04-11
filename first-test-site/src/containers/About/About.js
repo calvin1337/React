@@ -23,7 +23,7 @@ import style from "./about.module.css";
                         <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
                     </figure>
                     <h2>Blog</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis.</p><br></br>
+                    <p>A blog using a database for displaying posts and creating</p><br></br>
 
                     <Link to="/" className={style.button}>Learn More</Link>
                 </div>
@@ -40,7 +40,7 @@ import style from "./about.module.css";
                         <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
                     </figure>
                     <h2>To-Do-List</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis.</p><br></br>
+                    <p>A to-do-list using a database for displaying and creating</p><br></br>
 
                     <Link to="/" className={style.button}>Learn More</Link>
                 </div>
@@ -58,7 +58,7 @@ import style from "./about.module.css";
                         <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
                     </figure>
                     <h2>Login Authentication</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis.</p><br></br>
+                    <p>Adding a login page and authentication to be able to create blog posts</p><br></br>
 
                     <Link to="/" className={style.button}>Learn More</Link>
                 </div>

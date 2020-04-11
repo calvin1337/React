@@ -53,15 +53,21 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h2{
+.card h2{
   margin: 0 0 1rem;
   text-align: center;
+  border-bottom: #eeeeee 1px solid;
 }
 
 figure {
-  height: 200px;
+  height: 180px;
   width: 100% ;
   
+}
+
+.card p {
+  padding: 10px;
+  font-size: 16px;
 }
 
 img{
