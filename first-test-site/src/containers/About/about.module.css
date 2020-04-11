@@ -12,7 +12,12 @@
   
   grid-area: Intro; 
   padding:50px;
-  border: solid red 1px
+  font-size: 32px;
+}
+
+.Intro h3{
+  text-align: center;
+  padding-top:50px;
 }
 
 .Example1 { 

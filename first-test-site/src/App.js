@@ -3,6 +3,7 @@ import Navbar from "./components/Navigation/Navbar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Homepage from "./containers/Homepage/Homepage";
 import About from "./containers/About/About";
+import Blog from "./containers/Blog/Blog";
 import './App.css';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <About />
       )} />
       <Route path="/blog" render={props => (
-        <div>BLOG</div>
+        <Blog />
       )} />
       </Router>
       

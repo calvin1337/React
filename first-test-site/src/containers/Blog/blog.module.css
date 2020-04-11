@@ -1,0 +1,54 @@
+*{
+    font-family: sans-serif;
+}
+
+
+
+.BlogLandingPage{
+    height: calc(100vh - 4rem);
+    border: 2px solid red;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "BlogMainContent BlogSideBar";
+    height: 500px;
+    justify-items: center;
+    padding-top: 100px;
+  }
+  
+  .BlogMainContent { 
+      grid-area: BlogMainContent; 
+      border: 2px blue solid;
+      width:100%;
+          }
+          .BlogMainContent h1{
+              justify-items: center;
+              text-align: center;
+              border: 1px solid red;
+          }
+
+
+  .BlogSideBar { 
+      grid-area: BlogSideBar; 
+      border: 2px solid green;
+      width:100%;
+      justify-items: center;
+      justify-content: center;
+      display:grid;
+      width: 100%;
+
+    }
+
+    .BlogSideBar h1 {
+        border: 1px solid purple;
+        width: 100%;
+    }
+
+    
