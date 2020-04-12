@@ -3,29 +3,29 @@ import axios from "axios";
 
 
 
-export const fetchPostSuccess = (post) => {
+export const fetchPostsSuccess = (post) => {
     return {
-        type: actionTypes.FETCH_POST_SUCCESS,
+        type: actionTypes.FETCH_POSTS_SUCCESS,
         post: post
     }
 }
 
-export const fetchPostFail = (error) => {
+export const fetchPostsFail = (error) => {
     return {
-        type: actionTypes.FETCH_POST_FAIL,
+        type: actionTypes.FETCH_POSTS_FAIL,
         error:error
     }
 };
 
-export const fetchPostStart = () => {
+export const fetchPostsStart = () => {
     return {
-        type: actionTypes.FETCH_POST_START
+        type: actionTypes.FETCH_POSTS_START
     }
 };
 
 export const fetchPosts = () =>  {
     return dispatch => {
-        dispatch(fetchPostStart());
+        dispatch(fetchPostsStart());
         axios.get("https://react-first-project-4e07c.firebaseio.com/Blog/Post.json")
         .then(res => {
             const fetchedPosts = [];
@@ -35,10 +35,10 @@ export const fetchPosts = () =>  {
                     id: key
                 });
             }
-            dispatch(fetchPostSuccess(fetchedPosts));
+            dispatch(fetchPostsSuccess(fetchedPosts));
         })
         .catch(err => {
-            dispatch(fetchPostFail(err))
+            dispatch(fetchPostsFail(err))
         })
     }
 }
