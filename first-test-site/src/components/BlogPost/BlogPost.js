@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import style from "./blogPost.module.css"
-function BlogPost() {
+
+
+class BlogPost extends Component  {
+
+ 
+  render(){
+    
     return (
         <React.Fragment>
-            <div className={style.post}>
+        <div className={style.post}>
         <div className={style.postHeading}>
-      <div className={style.postDate}>
+        <div className={style.postDate}>
         <p className={style.dateDay}>11</p>
         <p className={style.dateMonth}>April</p>
       </div>
@@ -17,7 +23,8 @@ function BlogPost() {
     </div>
     </div>
     </React.Fragment>
-    )
+    )}
+    
 }
 
 export default BlogPost

@@ -6,10 +6,15 @@
 
 .BlogLandingPage{
     height: calc(100vh - 4rem);
-    border: 2px solid red;
     display:flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../../imgs/safar-safarov-MSN8TFhJ0is-unsplash.jpg), linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0,0.7));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top bottom;
+    color: white;
 }
 
 .gridContainer {
@@ -39,11 +44,10 @@
       grid-area: BlogSideBar; 
       border: 2px solid green;
       width:100%;
-      justify-items: center;
-      justify-content: center;
       display:grid;
       width: 100%;
     position: relative;
+    text-align: center;
     }
 
     .BlogSideBar h1 {
@@ -59,3 +63,22 @@
         margin: 20px;
         display: grid;
     }
+
+
+
+.BlogSideBar .button{
+    margin-top: auto;
+    background: #042557;
+    color:#fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    display:inline-block;
+    justify-items: start;
+    margin-top:20px;
+    
+  }
+  

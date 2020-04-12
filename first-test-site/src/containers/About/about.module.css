@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
+
+
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,6 +12,7 @@
   grid-template-areas: "Intro Intro Intro" "Example-1 Example-2 Example-3";
   height:calc(100vh - 4rem);
   background: #f1f1f4;
+
 }
 
 .Intro { 
@@ -86,8 +93,10 @@ img{
   font-weight: 800;
   text-align: center;
   padding: 15px;
-  width: 80%;
-  display:inline-block;
+  width: 100%;
+  display:block;
   justify-items: start;
   margin-top:20px;
+  
 }
+

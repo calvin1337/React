@@ -20,6 +20,8 @@ function Navbar() {
                 <NavLink  className={styles.navItem}  exact  to="/">Home</NavLink>
                 <NavLink  className={styles.navItem} to="/about">About</NavLink>
                 <NavLink  className={styles.navItem} to="/blog">Blog</NavLink>
+                <NavLink  className={styles.navItem} to="/todo">Todo</NavLink>
+
             </ul>
             
 

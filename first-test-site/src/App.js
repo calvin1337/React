@@ -22,6 +22,9 @@ function App() {
       <Route path="/blog" render={props => (
         <Blog />
       )} />
+       <Route path="/todo" render={props => (
+        <div></div>
+      )} />
       </Router>
       
     </div>
