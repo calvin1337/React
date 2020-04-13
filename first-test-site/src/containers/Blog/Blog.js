@@ -17,26 +17,36 @@ class Blog extends Component {
 
 
     componentDidMount() {
-        // console.log(this.state)
-        // axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
-        // .then(res => 
-        //     {
-        //         console.log(res.data)
-        //         this.setState({posts: res.data.Post})
-        //     });
-
-        axios.get( 'https://jsonplaceholder.typicode.com/posts' )
-        .then( response => {
-            const posts = response.data.slice(0, 4);
-            const updatedPosts = posts.map(post => {
-                return {
-                    ...post,
-                    author: 'Calvin'
-                }
+        console.log(this.state)
+        axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
+        .then(res => 
+            {
+                const postUpdate = res.data;
+                console.log(res.data)
+                var arr1 = []
+                var arr2 = Object.keys(postUpdate).map(function (i) {
+                    return arr1.push(postUpdate[i])
+                    
+                  });
+                  console.log(arr1)
+                  
+                  this.setState({posts: arr1})
             });
-            this.setState({posts: updatedPosts});
+
             
-        } )
+
+        // axios.get( 'https://jsonplaceholder.typicode.com/posts' )
+        // .then( response => {
+        //     const posts = response.data.slice(0, 4);
+        //     const updatedPosts = posts.map(post => {
+        //         return {
+        //             ...post,
+                    
+        //         }
+        //     });
+        //     this.setState({posts: updatedPosts});
+            
+        // } )
 
             
         
@@ -50,7 +60,7 @@ class Blog extends Component {
        let postsBlog = this.state.posts.map(post => {
             return (
             
-                <BlogPost Post={this.state.posts} content={this.state.posts.content} time={this.state.posts.time} id={this.state.posts.id} day={this.state.posts.day} month={this.state.posts.month} title={post.title} />
+                <BlogPost key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
 
            
      
@@ -58,8 +68,6 @@ class Blog extends Component {
         });
     
        
-        console.log(this.state.posts.id)
-        console.log(this.state.posts)
     
         return (
         
@@ -73,7 +81,7 @@ class Blog extends Component {
 
         <div className={style.BlogMainContent}>  
     
-                    {postsBlog}
+                   {postsBlog}
 
         
         </div>
@@ -84,7 +92,7 @@ class Blog extends Component {
              <div className={style.BlogSideBarContainer}> 
              <Link to="/" className={style.button}>Add Post</Link>
 
-            <h4>{this.state.posts.title}</h4>
+            <h4>*LINKS TO POST</h4>
             <h4>*LINKS TO POSTS*</h4>
             <h4>*LINKS TO POSTS*</h4>
             </div>
@@ -101,8 +109,9 @@ class Blog extends Component {
 
 const mapStateToProps = state => {
     return {
-        posts: state.posts,
+        
         loading: state.loading,
+        
     }
     
 }
