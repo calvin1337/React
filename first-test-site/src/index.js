@@ -13,6 +13,8 @@ const store = createStore(rootReducer, compose(
   applyMiddleware(thunk)
 ));
 
+
+
 const app = (
   <Provider store={store}>
       <App />

@@ -12,7 +12,7 @@ const fetchPostsStart = ( state, action ) => {
 
 const fetchPostsSuccess = ( state, action ) => {
     return updateObject( state, {
-        orders: action.orders,
+        posts: state,
         loading: false
     } );
 };

@@ -9,19 +9,35 @@ import axios from "axios";
 
 class Blog extends Component {
 
+    state = {
+        posts: []
 
-    componentDidMount() {
-        this.props.onFetchPosts();
+        
     }
 
+    componentDidMount() {
+        console.log(this.state)
+        axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
+        .then(res => 
+            {
+                console.log(res.data)
+                this.setState({posts: res.data.Post})
+            });
+        
+    }
 
+  
+    
     render(){
+
+        console.log(this.state.posts.id)
+        console.log(this.state.posts)
         
         return (
 
         <React.Fragment>
         <div className={style.BlogLandingPage}>
-            <h1>Blog landing page</h1>
+        <h1>Blog Landing Page</h1>
         </div>
         <div>
         <div className={style.gridContainer}>
@@ -29,13 +45,12 @@ class Blog extends Component {
 
 
         <div className={style.BlogMainContent}>  
-        <BlogPost />
+        <BlogPost title={this.state.posts.title} />
         <BlogPost />
         <BlogPost />
         
         
         </div>
-        
         
         
         
@@ -43,23 +58,28 @@ class Blog extends Component {
              <div className={style.BlogSideBarContainer}> 
              <Link to="/" className={style.button}>Add Post</Link>
 
+            <h4>{this.state.posts.title}</h4>
             <h4>*LINKS TO POSTS*</h4>
             <h4>*LINKS TO POSTS*</h4>
-            <h4>*LINKS TO POSTS*</h4>
+            
             </div>
         </div>
         </div>
         </div>
+        
         </React.Fragment>
     )}
     
 }
 
+
+
 const mapStateToProps = state => {
     return {
         posts: state.posts,
-        loading: state.loading
+        loading: state.loading,
     }
+    
 }
 
 const mapDispatchToProps = dispatch => {
