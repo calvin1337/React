@@ -45,9 +45,8 @@ class Blog extends Component {
 
 
         <div className={style.BlogMainContent}>  
-        <BlogPost title={this.state.posts.title} />
-        <BlogPost />
-        <BlogPost />
+        <BlogPost content={this.state.posts.content} time={this.state.posts.time} id={this.state.posts.id} day={this.state.posts.day} month={this.state.posts.month} title={this.state.posts.title} />
+    
         
         
         </div>
