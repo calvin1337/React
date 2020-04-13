@@ -15,39 +15,66 @@ class Blog extends Component {
         
     }
 
+
     componentDidMount() {
-        console.log(this.state)
-        axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
-        .then(res => 
-            {
-                console.log(res.data)
-                this.setState({posts: res.data.Post})
+        // console.log(this.state)
+        // axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
+        // .then(res => 
+        //     {
+        //         console.log(res.data)
+        //         this.setState({posts: res.data.Post})
+        //     });
+
+        axios.get( 'https://jsonplaceholder.typicode.com/posts' )
+        .then( response => {
+            const posts = response.data.slice(0, 4);
+            const updatedPosts = posts.map(post => {
+                return {
+                    ...post,
+                    author: 'Calvin'
+                }
             });
+            this.setState({posts: updatedPosts});
+            
+        } )
+
+            
         
     }
+
 
   
     
     render(){
 
+       let postsBlog = this.state.posts.map(post => {
+            return (
+            
+                <BlogPost Post={this.state.posts} content={this.state.posts.content} time={this.state.posts.time} id={this.state.posts.id} day={this.state.posts.day} month={this.state.posts.month} title={post.title} />
+
+           
+     
+        );
+        });
+    
+       
         console.log(this.state.posts.id)
         console.log(this.state.posts)
-        
+    
         return (
-
+        
         <React.Fragment>
         <div className={style.BlogLandingPage}>
         <h1>Blog Landing Page</h1>
         </div>
-        <div>
+        <div> 
         <div className={style.gridContainer}>
 
 
-
         <div className={style.BlogMainContent}>  
-        <BlogPost content={this.state.posts.content} time={this.state.posts.time} id={this.state.posts.id} day={this.state.posts.day} month={this.state.posts.month} title={this.state.posts.title} />
     
-        
+                    {postsBlog}
+
         
         </div>
         
@@ -60,7 +87,6 @@ class Blog extends Component {
             <h4>{this.state.posts.title}</h4>
             <h4>*LINKS TO POSTS*</h4>
             <h4>*LINKS TO POSTS*</h4>
-            
             </div>
         </div>
         </div>
