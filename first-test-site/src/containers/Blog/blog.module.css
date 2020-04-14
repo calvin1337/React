@@ -23,7 +23,7 @@
     grid-template-rows: 1fr;
     gap: 1px 1px;
     grid-template-areas: "BlogMainContent BlogSideBar";
-    height: 500px;
+    height: auto;
     justify-items: center;
     padding-top: 100px;
   }
@@ -32,6 +32,7 @@
       grid-area: BlogMainContent; 
       border: 2px blue solid;
       width:100%;
+      height: auto;
           }
           .BlogMainContent h1{
               justify-items: center;

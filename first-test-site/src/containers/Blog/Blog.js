@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 import { connect } from "react-redux";
 import BlogPost from "../../components/BlogPost/BlogPost";
 import * as actions from "../../store/actions/blog";
+import BlogLink from "../../components/BlogPost/BlogLink/BlogLink";
 import axios from "axios";
 
 
@@ -31,6 +32,10 @@ class Blog extends Component {
                   console.log(arr1)
                   
                   this.setState({posts: arr1})
+                  
+
+                  const latestPost = this.state.posts[1];
+                  console.log(latestPost.month, "LatestPost")
             });
 
             
@@ -52,21 +57,27 @@ class Blog extends Component {
         
     }
 
-
-  
+    postSelectedHandler = (id) => {
+        console.log(id, "Post Selector")
+    }
     
     render(){
 
+        
+
        let postsBlog = this.state.posts.map(post => {
             return (
-            
-                <BlogPost key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
+                
+                <BlogPost  key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
 
-           
-     
+                
+                
         );
         });
     
+        let postsLinks = this.state.posts.map(post => {
+        return <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} />
+        })
        
     
         return (
@@ -92,9 +103,7 @@ class Blog extends Component {
              <div className={style.BlogSideBarContainer}> 
              <Link to="/" className={style.button}>Add Post</Link>
 
-            <h4>*LINKS TO POST</h4>
-            <h4>*LINKS TO POSTS*</h4>
-            <h4>*LINKS TO POSTS*</h4>
+                {postsLinks}
             </div>
         </div>
         </div>
