@@ -11,9 +11,10 @@ import axios from "axios";
 class Blog extends Component {
 
     state = {
-        posts: []
-
-        
+        posts: [],
+        selectedPost : 0,
+        currentContent: "",
+        currentTitle: "Welcome To My Blog"
     }
 
 
@@ -29,51 +30,58 @@ class Blog extends Component {
                     return arr1.push(postUpdate[i])
                     
                   });
-                  console.log(arr1)
+                  
+                 arr1.sort(function(a, b) { 
+                    return a.id - b.id  ||  a.name.localeCompare(b.name);
+                  });
+                  
                   
                   this.setState({posts: arr1})
+                  this.setState({selectedPost: arr1[0].id})
+                  this.setState({currentContent: arr1[0].content})
+                  this.setState({currentTitle: arr1[0].title})
                   
-
-                  const latestPost = this.state.posts[1];
-                  console.log(latestPost.month, "LatestPost")
             });
 
             
-
-        // axios.get( 'https://jsonplaceholder.typicode.com/posts' )
-        // .then( response => {
-        //     const posts = response.data.slice(0, 4);
-        //     const updatedPosts = posts.map(post => {
-        //         return {
-        //             ...post,
-                    
-        //         }
-        //     });
-        //     this.setState({posts: updatedPosts});
-            
-        // } )
-
-            
         
+    }
+
+    postUpdateHandler = (id) => {
+       console.log(this.state.posts[id]);
+
     }
 
     postSelectedHandler = (id) => {
-        console.log(id, "Post Selector")
+        let updatedId = id        
+        this.setState({selectedPost: updatedId}) 
+        this.setState({currentContent: this.state.posts[id].content})
+        this.setState({currentTitle: this.state.posts[id].title})
+        this.postUpdateHandler(updatedId)
     }
+
+    
+
+    
     
     render(){
 
+       
         
 
-       let postsBlog = this.state.posts.map(post => {
-            return (
+    //    let postsBlog = this.state.posts.slice(0,1).map(post => {
+    //         return (
                 
-                <BlogPost  key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
+    //             <BlogPost selectedPost={this.state.selectedPost} key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
 
                 
                 
-        );
-        });
+    //     );
+    //
+
+
+
+
     
         let postsLinks = this.state.posts.map(post => {
         return <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} />
@@ -91,10 +99,11 @@ class Blog extends Component {
 
 
         <div className={style.BlogMainContent}>  
-    
-                   {postsBlog}
 
-        
+
+                   {/* {postsBlog} */}
+                   
+                <BlogPost currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
         </div>
         
         

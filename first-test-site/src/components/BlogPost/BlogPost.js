@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import style from "./blogPost.module.css"
 
 
+
 class BlogPost extends Component  {
+
+  
+  
  
   render(){
 
     
+
+
     
     return (
         <React.Fragment>
@@ -16,10 +22,10 @@ class BlogPost extends Component  {
     <p className={style.dateDay}>{this.props.day}</p>
   <p className={style.dateMonth}>{this.props.month}</p>
       </div>
-  <p className={style.postTitle}>{this.props.title}</p>
+  <p className={style.postTitle}>{this.props.currentTitle}</p>
     </div>
     <div className={style.postContent}>
-    <p>{this.props.content}</p>
+    <p>{this.props.currentContent}</p>
     <p className={style.postInfo}>Posted at {this.props.time}</p>
     </div>
     </div>
