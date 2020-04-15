@@ -32,8 +32,10 @@
     background: #eee;
     width: 75%;
     padding: 1px 20px 1px 20px;
-    margin: 20px auto 1px auto;
+    margin: 30px auto 1px auto;
     font-weight: bolder;
+    box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
     
   }
   
@@ -41,7 +43,7 @@
     font-size: 40px;
     font-family: 'Lato', sans-serif;
     color: #222;
-    text-align: left;
+    text-align: center;
     margin: 10px auto 10px auto;
     padding: 0px 45px 0px 0px;
     text-transform: capitalize;
@@ -61,7 +63,8 @@
     margin: 0px auto 40px auto;
     font-size: 40px ;
     min-height: 500px;
-  
+    box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
   }
 
   

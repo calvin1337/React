@@ -84,7 +84,13 @@ class Blog extends Component {
 
     
         let postsLinks = this.state.posts.map(post => {
-        return <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} />
+        return (
+        
+        <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} dateposted={(post.day + " " + post.month)}/>
+        
+        )
+
+
         })
        
     
@@ -110,12 +116,25 @@ class Blog extends Component {
         
         <div className={style.BlogSideBar}> 
              <div className={style.BlogSideBarContainer}> 
-             <Link to="/" className={style.button}>Add Post</Link>
-             <h3>Latest Posts</h3>
+             {/* <Link to="/" className={style.button}>Add Post</Link> */}
 
+             <div className={style.BlogSideBarLinks}>
+                <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
+             </div>
+
             </div>
-        </div>
+            </div>
+            
+            {/* <div className={style.BlogSidePost}>
+                <div className={style.BlogSideBarPostContainer}>
+                <h1>Intro Blog</h1>
+
+
+                </div>
+            </div> */}
+            
+       
         </div>
         </div>
         

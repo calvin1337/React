@@ -4,5 +4,17 @@
     font-size:20px;
     font-family: sans-serif;
     margin: 20px;
-    
+    border-bottom: #222222 solid 1px;    
+    font-weight: bolder;
+}
+
+.bloglink  {
+
+    color:black;
+    text-transform: capitalize;
+
+}
+
+.bloglink:hover{
+    cursor: pointer;
 }

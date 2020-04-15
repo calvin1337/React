@@ -7,7 +7,7 @@ export class BlogLink extends Component {
 
     render() {
         return (
-            <a onClick={this.props.clicked} className={style.bloglink} >{this.props.title}</a>
+            <a onClick={this.props.clicked} className={style.bloglink} >{this.props.title} posted {this.props.dateposted}</a>
         )
     }
 }
