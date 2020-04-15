@@ -7,7 +7,7 @@ export class BlogLink extends Component {
 
     render() {
         return (
-            <button onClick={this.props.clicked} className={style.bloglink} >{this.props.title}</button>
+            <a onClick={this.props.clicked} className={style.bloglink} >{this.props.title}</a>
         )
     }
 }

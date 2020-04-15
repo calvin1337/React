@@ -111,6 +111,7 @@ class Blog extends Component {
         <div className={style.BlogSideBar}> 
              <div className={style.BlogSideBarContainer}> 
              <Link to="/" className={style.button}>Add Post</Link>
+             <h3>Latest Posts</h3>
 
                 {postsLinks}
             </div>

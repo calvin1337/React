@@ -17,6 +17,7 @@ class BlogPost extends Component  {
     return (
         <React.Fragment>
         <div className={style.post}>
+         
         <div className={style.postHeading}>
         <div className={style.postDate}>
     <p className={style.dateDay}>{this.props.day}</p>
@@ -25,10 +26,13 @@ class BlogPost extends Component  {
   <p className={style.postTitle}>{this.props.currentTitle}</p>
     </div>
     <div className={style.postContent}>
+       <div className={style.background}>
     <p>{this.props.currentContent}</p>
+    </div>
     <p className={style.postInfo}>Posted at {this.props.time}</p>
     </div>
     </div>
+   
     </React.Fragment>
     )}
     

@@ -26,6 +26,7 @@
     height: auto;
     justify-items: center;
     padding-top: 100px;
+    background: #474747;
   }
   
   .BlogMainContent { 
@@ -49,6 +50,7 @@
       width: 100%;
     position: relative;
     text-align: center;
+    background: green;
     }
 
     .BlogSideBar h1 {
@@ -83,3 +85,7 @@
     
   }
   
+  .BlogSideBarContainer{
+      background: white;
+      margin: 30px;
+  }
