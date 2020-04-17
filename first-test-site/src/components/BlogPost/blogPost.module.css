@@ -1,7 +1,7 @@
 .postDate {
     display: block;
     width: 45px;
-    height: 53px;
+    height: 50px;
     margin: -13px 0px 0px 0px;
     padding: 0px auto 20px auto;
     position: solid;
@@ -58,7 +58,7 @@
     background: #eee;
     line-height: 140%;
     width: 75%;
-    height: auto;
+    height: 600px;
     padding: 5px 20px 30px 20px;
     margin: 0px auto 40px auto;
     font-size: 40px ;
@@ -74,13 +74,13 @@
     float: right;
     padding: 10px 0px 0px 0px;
     margin: -15px 0px 0px 0px;
-
+    height: 30px;
   }
   
 
   .post {
       width: 100%;
-      height: auto;
+      
   }
 
   .background{
