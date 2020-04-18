@@ -14,7 +14,10 @@ class Blog extends Component {
         posts: [],
         selectedPost : 0,
         currentContent: "",
-        currentTitle: "Welcome To My Blog"
+        currentTitle: "Welcome To My Blog",
+        month: "",
+        day: 0
+
     }
 
 
@@ -40,6 +43,9 @@ class Blog extends Component {
                   this.setState({selectedPost: arr1[0].id})
                   this.setState({currentContent: arr1[0].content})
                   this.setState({currentTitle: arr1[0].title})
+                  this.setState({day: arr1[0].day})
+                  this.setState({month: arr1[0].month})
+
                   
             });
 
@@ -57,6 +63,9 @@ class Blog extends Component {
         this.setState({selectedPost: updatedId}) 
         this.setState({currentContent: this.state.posts[id].content})
         this.setState({currentTitle: this.state.posts[id].title})
+        this.setState({day: this.state.posts[id].day})
+        this.setState({month: this.state.posts[id].month})
+
         this.postUpdateHandler(updatedId)
     }
 
@@ -109,19 +118,22 @@ class Blog extends Component {
 
                    {/* {postsBlog} */}
                    
-                <BlogPost currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
+                <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
         </div>
         
         
         
         <div className={style.BlogSideBar}> 
              <div className={style.BlogSideBarContainer}> 
-             {/* <Link to="/" className={style.button}>Add Post</Link> */}
 
              <div className={style.BlogSideBarLinks}>
                 <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
              </div>
+             <a className={style.button}>Add Post</a>
+             <a className={style.buttonEdit}>Edit Post</a>
+             <a className={style.buttonDelete}>Delete Post</a>
+
 
             </div>
             </div>

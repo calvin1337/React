@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import style from "./blogPost.module.css"
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class BlogPost extends Component  {
 
@@ -24,6 +24,9 @@ class BlogPost extends Component  {
   <p className={style.dateMonth}>{this.props.month}</p>
       </div>
   <p className={style.postTitle}>{this.props.currentTitle}</p>
+
+  
+
     </div>
     <div className={style.postContent}>
        <div className={style.background}>

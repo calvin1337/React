@@ -116,3 +116,34 @@
     background: #eee;
     margin: 30px;
   }
+
+  .BlogSideBar .buttonDelete{
+    margin-top: auto;
+    color:#fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    display:inline-block;
+    justify-items: start;
+    margin-top:20px;
+    background: #b80214;
+  }
+
+
+  .BlogSideBar .buttonEdit{
+    margin-top: auto;
+    color:#fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    display:inline-block;
+    justify-items: start;
+    margin-top:20px;
+    background: #474747;
+  }
