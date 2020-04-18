@@ -130,6 +130,8 @@
     justify-items: start;
     margin-top:20px;
     background: #b80214;
+    cursor: pointer;
+
   }
 
 
@@ -146,4 +148,5 @@
     justify-items: start;
     margin-top:20px;
     background: #474747;
+    cursor: pointer;
   }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import style from "./blog.module.css"
-import {Link} from "react-router-dom"
 import { connect } from "react-redux";
 import BlogPost from "../../components/BlogPost/BlogPost";
 import * as actions from "../../store/actions/blog";
@@ -46,7 +45,6 @@ class Blog extends Component {
                   this.setState({day: arr1[0].day})
                   this.setState({month: arr1[0].month})
 
-                  
             });
 
             
@@ -69,6 +67,12 @@ class Blog extends Component {
         this.postUpdateHandler(updatedId)
     }
 
+    postDeletedHandler = (id) => {
+        let postName = this.state.posts[id].name
+   axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${postName}.json`)
+   .then(res => this.setState({ posts:[...this.state.posts.filter
+    (posts => posts.id !== id)]}))
+    }
     
 
     
@@ -132,7 +136,7 @@ class Blog extends Component {
              </div>
              <a className={style.button}>Add Post</a>
              <a className={style.buttonEdit}>Edit Post</a>
-             <a className={style.buttonDelete}>Delete Post</a>
+             <a onClick={() => this.postDeletedHandler(this.state.selectedPost)} className={style.buttonDelete}>Delete Post</a>
 
 
             </div>
