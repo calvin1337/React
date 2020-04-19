@@ -1,24 +1,27 @@
 import React, { Component } from 'react'
 import "./Modal.css";
-import Backdrop from "../Backdrop/Backdrop";
-
 export class Modal extends Component {
+
+
     render() {
-
-       
+        
+        let displayModal = {
+    display: "none"
+}     
+if(this.props.showModal === true){
+    displayModal = {
+        display: "block"
+    } 
+}  else displayModal = {
+        display: "none"
+    }
         return (
-            <React.Fragment>
-                <Backdrop show={this.props.show} clicked={this.props.modalClosed}>
-                    <div className="Modal"
-                    style={{
-                        transform: this.props.show ? "translateY(0)" : "translateY(-100vh)",
-                        opacity: this.props.show ? "1" : 0 
-                    }}>
+            <div style={displayModal} className="modal-container">
+            <div className="modal">
+                <h1>Hello</h1>
+            </div>  
 
-                    </div>
-
-                </Backdrop>
-            </React.Fragment>
+        </div>
         )
     }
 }

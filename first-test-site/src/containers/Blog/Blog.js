@@ -17,8 +17,8 @@ class Blog extends Component {
         currentTitle: "Welcome To My Blog",
         month: "",
         day: 0,
-        showPost: true,
-        modalClosed: false
+        showPost: false,
+        showModal: false
 
     }
 
@@ -89,7 +89,7 @@ class Blog extends Component {
     }
 
     postAddHandler(){
-        this.setState({showPost: !this.state.showPost})
+        this.setState({showModal: !this.state.showModal})
     }
 
     
@@ -120,10 +120,6 @@ class Blog extends Component {
 
         })
 
-        let showModal = ""
-        if(this.state.showPost == true){
-            showModal = <div>Hello</div>
-        } else showModal = ""
        
     
         return (
@@ -133,9 +129,9 @@ class Blog extends Component {
         <h1>Blog Landing Page</h1>
         </div>
         <div> 
+            <Modal showModal={this.state.showModal}> </Modal>
         <div className={style.gridContainer}>
 
-            {showModal}
 
         <div className={style.BlogMainContent}>  
                  <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
