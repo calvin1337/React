@@ -5,6 +5,7 @@ import BlogPost from "../../components/BlogPost/BlogPost";
 import * as actions from "../../store/actions/blog";
 import BlogLink from "../../components/BlogPost/BlogLink/BlogLink";
 import axios from "axios";
+import Modal from "../../components/Modal/Modal";
 
 
 class Blog extends Component {
@@ -15,7 +16,9 @@ class Blog extends Component {
         currentContent: "",
         currentTitle: "Welcome To My Blog",
         month: "",
-        day: 0
+        day: 0,
+        showPost: true,
+        modalClosed: false
 
     }
 
@@ -24,8 +27,12 @@ class Blog extends Component {
         console.log(this.state)
         axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
         .then(res => 
-            {
+
+            {    
+                
                 const postUpdate = res.data;
+
+                if(postUpdate !== null){
                 console.log(res.data)
                 var arr1 = []
                 var arr2 = Object.keys(postUpdate).map(function (i) {
@@ -45,6 +52,8 @@ class Blog extends Component {
                   this.setState({day: arr1[0].day})
                   this.setState({month: arr1[0].month})
 
+            } else return null;
+                
             });
 
             
@@ -69,11 +78,19 @@ class Blog extends Component {
 
     postDeletedHandler = (id) => {
         let postName = this.state.posts[id].name
-   axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${postName}.json`)
-   .then(res => this.setState({ posts:[...this.state.posts.filter
-    (posts => posts.id !== id)]}))
+        axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${postName}.json`)
+        .then(res => this.setState({ posts:[...this.state.posts.filter
+        (posts => posts.id !== id)]}))
+        
     }
     
+    postCloseHandler = () => {
+        console.log("hello")
+    }
+
+    postAddHandler(){
+        this.setState({showPost: !this.state.showPost})
+    }
 
     
     
@@ -90,11 +107,8 @@ class Blog extends Component {
                 
                 
     //     );
-    //
-
-
-
-
+    //  
+       
     
         let postsLinks = this.state.posts.map(post => {
         return (
@@ -105,6 +119,11 @@ class Blog extends Component {
 
 
         })
+
+        let showModal = ""
+        if(this.state.showPost == true){
+            showModal = <div>Hello</div>
+        } else showModal = ""
        
     
         return (
@@ -116,13 +135,12 @@ class Blog extends Component {
         <div> 
         <div className={style.gridContainer}>
 
+            {showModal}
 
         <div className={style.BlogMainContent}>  
-
-
-                   {/* {postsBlog} */}
+                 <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
+           
                    
-                <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
         </div>
         
         
@@ -134,7 +152,7 @@ class Blog extends Component {
                 <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
              </div>
-             <a className={style.button}>Add Post</a>
+             <a onClick={() => this.postAddHandler(this.state.showPost)} className={style.button}>Add Post</a>
              <a className={style.buttonEdit}>Edit Post</a>
              <a onClick={() => this.postDeletedHandler(this.state.selectedPost)} className={style.buttonDelete}>Delete Post</a>
 

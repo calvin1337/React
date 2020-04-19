@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import style from "./blogPost.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class BlogPost extends Component  {
 
