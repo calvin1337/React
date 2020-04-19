@@ -51,14 +51,16 @@ class Blog extends Component {
                   this.setState({currentTitle: arr1[0].title})
                   this.setState({day: arr1[0].day})
                   this.setState({month: arr1[0].month})
-
+                  
             } else return null;
                 
             });
-
             
-        
-    }
+    }   
+
+    
+    
+
 
     postUpdateHandler = (id) => {
        console.log(this.state.posts[id]);
@@ -88,15 +90,22 @@ class Blog extends Component {
         console.log("hello")
     }
 
-    postAddHandler(){
-        this.setState({showModal: !this.state.showModal})
-    }
+   
 
-    
+    toggleModal = () => {
+        this.setState(prevState => ({
+          showModal: !prevState.showModal
+          
+        }));
+      };
+
+      
     
     render(){
 
-       
+
+        
+
         
 
     //    let postsBlog = this.state.posts.slice(0,1).map(post => {
@@ -129,7 +138,7 @@ class Blog extends Component {
         <h1>Blog Landing Page</h1>
         </div>
         <div> 
-            <Modal showModal={this.state.showModal}> </Modal>
+            <Modal showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
         <div className={style.gridContainer}>
 
 
@@ -148,7 +157,7 @@ class Blog extends Component {
                 <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
              </div>
-             <a onClick={() => this.postAddHandler(this.state.showPost)} className={style.button}>Add Post</a>
+             <a onClick={this.toggleModal} className={style.button}>Add Post</a>
              <a className={style.buttonEdit}>Edit Post</a>
              <a onClick={() => this.postDeletedHandler(this.state.selectedPost)} className={style.buttonDelete}>Delete Post</a>
 

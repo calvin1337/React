@@ -7,14 +7,22 @@ export class Modal extends Component {
         
         let displayModal = {
     display: "none"
-}     
-if(this.props.showModal === true){
+        }     
+
+    if(this.props.showModal === true){
     displayModal = {
         display: "block"
     } 
-}  else displayModal = {
+    }  else displayModal = {
         display: "none"
-    }
+    }   
+    
+
+    let modalContainer = document.getElementsByClassName("modal-container")
+
+
+
+  
         return (
             <div style={displayModal} className="modal-container">
             <div className="modal">
