@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./Modal.css";
+import CreatePost from "../../components/BlogPost/createPost/CreatePost";
 
 
 export class Modal extends Component {
@@ -29,8 +30,7 @@ export class Modal extends Component {
         return (
             <div  style={displayModal} className="modal">
             <div className="modal-box">
-                <h1>Hello</h1>
-                <h1>Enter Blog post</h1>
+                <CreatePost />
             </div>  
 
         </div>
