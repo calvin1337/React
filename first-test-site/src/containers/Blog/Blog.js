@@ -19,7 +19,7 @@ class Blog extends Component {
         day: 0,
         showPost: false,
         showModal: false,
-        key: ""
+        testing: ""
         
     }
 
@@ -37,22 +37,21 @@ class Blog extends Component {
                 for(let key in res.data){
                     postUpdate.push({
                         ...res.data[key],
-                        key: key
+                        id: key
                     });
                 }
 
+                console.log(postUpdate, "before push")
+
                 if(postUpdate !== null){
-                console.log(res.data)
+                    this.setState({testing: res.data})
                 var arr1 = []
                 var arr2 = Object.keys(postUpdate).map(function (i) {
                     return arr1.push(postUpdate[i])
                     
                   });
-                  
-                 arr1.sort(function(a, b) { 
-                    return a.id - b.id  ||  a.name.localeCompare(b.name);
-                  });
-                  
+                  console.log(arr2)
+                 
                   
                   this.setState({posts: arr1})
                   this.setState({selectedPost: arr1[0].id})
@@ -70,28 +69,17 @@ class Blog extends Component {
     
     
 
-
-    postUpdateHandler = (id) => {
-       console.log(this.state.posts[id]);
-
-    }
-
-    postSelectedHandler = (id) => {
-        // let updatedId = id        
-        // this.setState({selectedPost: updatedId}) 
-        // this.setState({currentContent: this.state.posts[id].content})
-        // this.setState({currentTitle: this.state.posts[id].title})
-        // this.setState({day: this.state.posts[id].day})
-        // this.setState({month: this.state.posts[id].month})
-
-        // this.postUpdateHandler(updatedId)
+    postSelectedHandler = (key) => {
+        console.log(this.state.testing[key])
+        console.log(key)
+        
     }
 
     postDeletedHandler = (key) => {
-        let postName = this.state.posts.key
-        axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${this.state.posts.key}.json`)
-        .then(res => this.setState({ posts:[...this.state.posts.filter
-        (posts => posts.key !== key)]}))
+        // let postName = this.state.testing.key
+        // axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${this.state.testing.key}.json`)
+        // .then(res => this.setState({ posts:[...this.state.posts.filter
+        // (posts => posts.key !== key)]}))
         
     }
     
@@ -139,7 +127,7 @@ class Blog extends Component {
         let postsLinks = this.state.posts.map(post => {
         return (
         
-        <BlogLink clicked={() => this.postSelectedHandler(post.key)} key={post.key} id={post.id} title={post.title} dateposted={(post.day + " " + post.month)}/>
+        <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} dateposted={(post.day + " " + post.month)}/>
         
         )
 
