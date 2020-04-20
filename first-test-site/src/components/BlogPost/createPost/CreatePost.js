@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./createPost.module.css";
-
+import axios from "axios";
+import {Redirect} from "react-router-dom";
 export class CreatePost extends Component {
     
     state = {
@@ -10,7 +11,7 @@ export class CreatePost extends Component {
         month : "" ,
         time : "",
         id : 0,
-        submitted: false
+        submitted: true
     }
 
 
@@ -18,9 +19,33 @@ export class CreatePost extends Component {
     changedHandler = () => {
         let changedTitle = document.getElementById("newTitle").value
         let changedPost = document.getElementById("newBlogPost").value
-
-        console.log(changedTitle, changedPost)
     }
+
+    postHandler = (time, day, month) => {
+        let changedTitle = document.getElementById("newTitle").value
+        let changedPost = document.getElementById("newBlogPost").value
+        let id = new Date;
+        id = Date.now();
+        console.log(time, day, month, changedTitle, changedPost, id)
+
+        const data = {
+            title: changedTitle,
+            content: changedPost,
+            id: id,
+            time: time,
+            day: day,
+            month: month,
+            postName: id 
+        }
+
+        axios.post("https://react-first-project-4e07c.firebaseio.com/Blog.json", data)
+        .then( response => {
+            this.setState({submitted: true})
+            window.location.href = '/blog'
+        });
+    
+    }
+
 
     getDate = (e) => {
 
@@ -28,19 +53,31 @@ export class CreatePost extends Component {
         
         let month = new Date(); 
         month = month.getMonth()
+        month = month + 1
 
         let day = new Date();
-        day = day.getDay();
+        day = day.getDate();
 
-        let time = new Date();
-        time = Date.now();
+        let hours = new Date();
+        hours = hours.getHours();
+
+        let minutes = new Date();
+        minutes = minutes.getMinutes();
+
+        
+        if(minutes < 10){
+            minutes = "0" + minutes
+        }
+
+        let time = (hours + ":" + minutes)
+        this.postHandler(time, day, month)
     }
 
     
     render() {
 
         return (
-            <form style={styles}> 
+            <form  style={styles}> 
                 <div>                    
                     <label for="newTitle"><span>Blog Title</span></label>
                     <input onChange={this.changedHandler} type="text" id="newTitle"></input>

@@ -146,7 +146,7 @@ class Blog extends Component {
         <h1>Blog Landing Page</h1>
         </div>
         <div onClick={this.closeModal} > 
-            <Modal className="modal"  showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
+            <Modal submitted={this.props.submitted}  className="modal"  showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
         <div className={style.gridContainer}>
 
 

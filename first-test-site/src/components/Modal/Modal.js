@@ -37,7 +37,7 @@ export class Modal extends Component {
             <button className="closeBtn" id="close">
             <FontAwesomeIcon icon={faTimes} size="1x"/> </button>
 
-                <CreatePost />
+                <CreatePost submitted={this.props.submitted} />
             </div>  
 
         </div>
