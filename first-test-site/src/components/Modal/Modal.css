@@ -23,3 +23,22 @@
     padding: 50px;
     
 }
+
+button, input[type="submit"] {
+    background-color: #30336b;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+
+.closeBtn{
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color:#30336b;
+}

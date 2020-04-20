@@ -3,14 +3,38 @@ import styles from "./createPost.module.css";
 
 export class CreatePost extends Component {
     
-
-    changedHandler = () => {
-        let changedInput = document.getElementById("newTitle").value
-
-        console.log(changedInput)
+    state = {
+        post: "" ,
+        title : "",
+        day : 0 ,
+        month : "" ,
+        time : "",
+        id : 0,
+        submitted: false
     }
 
 
+
+    changedHandler = () => {
+        let changedTitle = document.getElementById("newTitle").value
+        let changedPost = document.getElementById("newBlogPost").value
+
+        console.log(changedTitle, changedPost)
+    }
+
+    getDate = (e) => {
+
+        e.preventDefault();
+        
+        let month = new Date(); 
+        month = month.getMonth()
+
+        let day = new Date();
+        day = day.getDay();
+
+        let time = new Date();
+        time = Date.now();
+    }
 
     
     render() {
@@ -23,7 +47,10 @@ export class CreatePost extends Component {
                 </div>
                 <div style={weemargin}>
                 <label for="newBlogContent"><span>Post:</span></label>
-                    <textarea id="newBlogContent"></textarea>
+                    <textarea onChange={this.changedHandler}  id="newBlogPost"></textarea>
+                </div>
+                <div style={weemargin}>
+                <input  onClick={(e) => this.getDate(e)} type="submit" value="Submit" class="submit-btn"></input>
                 </div>
             </form>
         )
