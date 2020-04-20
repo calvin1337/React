@@ -100,6 +100,14 @@ class Blog extends Component {
       };
 
       
+      closeModal = (e) => {
+        if(e.target.className == "modal"){
+           this.setState({showModal : !this.state.showModal})
+            
+        }
+     }
+
+      
     
     render(){
 
@@ -137,8 +145,8 @@ class Blog extends Component {
         <div className={style.BlogLandingPage}>
         <h1>Blog Landing Page</h1>
         </div>
-        <div> 
-            <Modal showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
+        <div onClick={this.closeModal} > 
+            <Modal className="modal"  showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
         <div className={style.gridContainer}>
 
 

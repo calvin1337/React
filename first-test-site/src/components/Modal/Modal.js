@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import "./Modal.css";
+
+
 export class Modal extends Component {
 
+   state = {
+       toggleModal : false
+   }
+
+    
 
     render() {
         
@@ -16,17 +23,14 @@ export class Modal extends Component {
     }  else displayModal = {
         display: "none"
     }   
+
     
-
-    let modalContainer = document.getElementsByClassName("modal-container")
-
-
-
   
         return (
-            <div style={displayModal} className="modal-container">
-            <div className="modal">
+            <div  style={displayModal} className="modal">
+            <div className="modal-box">
                 <h1>Hello</h1>
+                <h1>Enter Blog post</h1>
             </div>  
 
         </div>
