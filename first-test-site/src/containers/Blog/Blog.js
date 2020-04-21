@@ -43,7 +43,7 @@ class Blog extends Component {
 
                 console.log(postUpdate, "before push")
 
-                if(postUpdate !== null){
+                if(postUpdate.length !== 0){
                     this.setState({testing: res.data})
                 var arr1 = []
                 var arr2 = Object.keys(postUpdate).map(function (i) {
@@ -70,9 +70,12 @@ class Blog extends Component {
     
 
     postSelectedHandler = (key) => {
-        console.log(this.state.testing[key])
-        console.log(key)
-        
+        // console.log(this.state.testing[key].title, key)
+        this.setState({currentContent: this.state.testing[key].content})
+        this.setState({currentTitle: this.state.testing[key].title})
+        this.setState({month: this.state.testing[key].month})
+        this.setState({day: this.state.testing[key].day})
+
     }
 
     postDeletedHandler = (key) => {
