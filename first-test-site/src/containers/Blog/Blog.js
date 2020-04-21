@@ -12,15 +12,9 @@ class Blog extends Component {
 
     state = {
         posts: [],
-        selectedPost : 0,
-        currentContent: "",
-        currentTitle: "Welcome To My Blog",
-        month: "",
-        day: 0,
         showPost: false,
         showModal: false,
-        testing: ""
-        
+        key: ""
     }
 
 
@@ -42,7 +36,8 @@ class Blog extends Component {
                 for(let key in res.data){
                     postUpdate.push({
                         ...res.data[key],
-                        id: key
+                        id: key,
+                        key: key
                     });
                 }
 
@@ -50,8 +45,8 @@ class Blog extends Component {
 
                 if(postUpdate.length !== 0){
                     this.setState({testing: res.data})
-                var arr1 = []
-                var arr2 = Object.keys(postUpdate).map(function (i) {
+                     var arr1 = []
+                    var arr2 = Object.keys(postUpdate).map(function (i) {
                     return arr1.push(postUpdate[i])
                     
                   });
@@ -59,11 +54,8 @@ class Blog extends Component {
                  
                   
                   this.setState({posts: arr1})
-                  this.setState({selectedPost: arr1[0].id})
-                  this.setState({currentContent: arr1[0].content})
-                  this.setState({currentTitle: arr1[0].title})
-                  this.setState({day: arr1[0].day})
-                  this.setState({month: arr1[0].month})
+                  this.setState({key: arr1[0].key})
+                  
                   console.log(arr1)
             } else return null;
                 
@@ -72,46 +64,31 @@ class Blog extends Component {
     
     
 
-    postSelectedHandler = (key) => {
-        // console.log(this.state.testing[key].title, key)
-        
-        this.setState({currentContent: this.state.testing[key].content})
-        this.setState({currentTitle: this.state.testing[key].title})
-        this.setState({month: this.state.testing[key].month})
-        this.setState({day: this.state.testing[key].day})
-
-    }
+    
 
     postDeletedHandler = (key) => {
         console.log(this.state.posts, "delete")
         axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${key}.json`)
         .then(res => this.setState({ posts:[...this.state.posts.filter
-            (post => post.id !== key)]}))
-            delete this.state.testing[key]
-            console.log(this.state.testing)
+            (post => post.key !== key)]}))  
+            console.log(this.state.posts, "afterdelete")
         }
+
+    postSelectedHandler = (key) => {
+           
+    }
     
+
+
     postCloseHandler = () => {
         console.log("hello")
     }
 
-    // currentPost = () => {
-    //     console.log(this.state.posts.length)
-    //     if(this.state.posts.length >= 1){
-    //         this.setState({currentContent: this.state.posts[0].content})
-    //         this.setState({currentTitle: this.state.posts[0].title})
-    //         this.setState({month: this.state.posts[0].month})
-    //         this.setState({day: this.state.posts[0].day})
-    //         this.setState({selectedPost: this.state.posts[0].id})
+    currentPost = () => {
+         
+            
 
-    //     } else if(this.state.posts.length === 0) {
-    //         this.setState({currentContent: "New Posts Coming Soon!"})
-    //         this.setState({currentTitle: "Welcome To My Blog"})
-    //         this.setState({month: "April"})
-    //         this.setState({day: 20})
-    //     }
-
-    // }
+    }
 
    
 
@@ -136,14 +113,14 @@ class Blog extends Component {
 
         
 
-    //    let postsBlog = this.state.posts.slice(0,1).map(post => {
-    //         return (
+       let postsBlog = this.state.posts.slice(0,1).map(post => {
+            return (
                 
-    //             <BlogPost selectedPost={this.state.selectedPost} key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
+                <BlogPost key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
 
                 
                 
-    //         )})
+            )})
      
        
     
@@ -172,8 +149,7 @@ class Blog extends Component {
 
 
         <div className={style.BlogMainContent}>  
-                 <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
-                   {/* {postsBlog} */}
+                   {postsBlog}
         </div>
         
         
@@ -187,7 +163,7 @@ class Blog extends Component {
              </div>
              <a onClick={this.toggleModal} className={style.button}>Add Post</a>
              <a className={style.buttonEdit}>Edit Post</a>
-             <a onClick={() => this.postDeletedHandler(this.state.selectedPost)} className={style.buttonDelete}>Delete Post</a>
+             <a onClick={() => this.postDeletedHandler(this.state.key)} className={style.buttonDelete}>Delete Post</a>
 
 
             </div>
