@@ -15,7 +15,11 @@ class Blog extends Component {
         showPost: false,
         showModal: false,
         key: "",
-        currentPost: {}
+        currentPost: {},
+        defaultPost: {
+            title: "Welcome To My Blog",
+            content: "Their Seems to be no posts try adding one",
+        }
     }
 
 
@@ -58,7 +62,7 @@ class Blog extends Component {
                   this.setState({key: arr1[0].key})
                   this.setState({currentPost: arr1[0]})
                   console.log(arr1)
-            } else return null;
+            } else return this.setState({currentPost: this.state.defaultPost});
                 
             });
     }
@@ -72,9 +76,25 @@ class Blog extends Component {
         axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${key}.json`)
         .then(res => this.setState({ posts:[...this.state.posts.filter
             (post => post.key !== key)]}))  
-            this.setState({currentPost: {}})
+            
+            this.postChanged(key)
 
         }
+
+        postChanged = (key) => {
+
+            for(let i = 0; i < this.state.posts.length; i++){
+                if(this.state.posts[i].id !== key) {
+                   return (
+                        this.setState({currentPost: this.state.posts[i], key:this.state.posts[i].key})
+                   )
+                   
+            } else  {
+                this.setState({currentPost: this.state.defaultPost})
+            }
+            
+        }
+    }
 
     
     postSelectedHandler = (key) => {
