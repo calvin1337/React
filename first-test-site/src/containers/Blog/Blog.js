@@ -25,7 +25,12 @@ class Blog extends Component {
 
 
     componentDidMount() {
-        console.log(this.state)
+        
+       this.getPosts()
+            
+    }   
+
+    getPosts = () => {
         axios.get("https://react-first-project-4e07c.firebaseio.com/Blog.json")
         .then(res => 
 
@@ -63,14 +68,13 @@ class Blog extends Component {
             } else return null;
                 
             });
-            
-    }   
-
+    }
     
     
 
     postSelectedHandler = (key) => {
         // console.log(this.state.testing[key].title, key)
+        
         this.setState({currentContent: this.state.testing[key].content})
         this.setState({currentTitle: this.state.testing[key].title})
         this.setState({month: this.state.testing[key].month})
@@ -79,16 +83,35 @@ class Blog extends Component {
     }
 
     postDeletedHandler = (key) => {
-        // let postName = this.state.testing.key
-        // axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${this.state.testing.key}.json`)
-        // .then(res => this.setState({ posts:[...this.state.posts.filter
-        // (posts => posts.key !== key)]}))
-        
-    }
+        console.log(this.state.posts, "delete")
+        axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${key}.json`)
+        .then(res => this.setState({ posts:[...this.state.posts.filter
+            (post => post.id !== key)]}))
+            delete this.state.testing[key]
+            console.log(this.state.testing)
+        }
     
     postCloseHandler = () => {
         console.log("hello")
     }
+
+    // currentPost = () => {
+    //     console.log(this.state.posts.length)
+    //     if(this.state.posts.length >= 1){
+    //         this.setState({currentContent: this.state.posts[0].content})
+    //         this.setState({currentTitle: this.state.posts[0].title})
+    //         this.setState({month: this.state.posts[0].month})
+    //         this.setState({day: this.state.posts[0].day})
+    //         this.setState({selectedPost: this.state.posts[0].id})
+
+    //     } else if(this.state.posts.length === 0) {
+    //         this.setState({currentContent: "New Posts Coming Soon!"})
+    //         this.setState({currentTitle: "Welcome To My Blog"})
+    //         this.setState({month: "April"})
+    //         this.setState({day: 20})
+    //     }
+
+    // }
 
    
 
@@ -111,9 +134,6 @@ class Blog extends Component {
     
     render(){
 
-
-        
-
         
 
     //    let postsBlog = this.state.posts.slice(0,1).map(post => {
@@ -123,8 +143,8 @@ class Blog extends Component {
 
                 
                 
-    //     );
-    //  
+    //         )})
+     
        
     
         let postsLinks = this.state.posts.map(post => {
@@ -137,6 +157,7 @@ class Blog extends Component {
 
         })
 
+        
        
     
         return (
@@ -152,8 +173,7 @@ class Blog extends Component {
 
         <div className={style.BlogMainContent}>  
                  <BlogPost day={this.state.day} month={this.state.month} currentContent={this.state.currentContent} currentTitle={this.state.currentTitle} currentPost={this.state.selectedPost} />
-           
-                   
+                   {/* {postsBlog} */}
         </div>
         
         
