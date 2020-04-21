@@ -21,14 +21,14 @@ class BlogPost extends Component  {
     <p className={style.dateDay}>{this.props.day}</p>
   <p className={style.dateMonth}>{this.props.month}</p>
       </div>
-  <p className={style.postTitle}>{this.props.currentTitle}</p>
+  <p className={style.postTitle}>{this.props.title}</p>
 
   
 
     </div>
     <div className={style.postContent}>
        <div className={style.background}>
-    <p>{this.props.currentContent}</p>
+    <p>{this.props.content}</p>
     </div>
     <p className={style.postInfo}>Posted at {this.props.time}</p>
     </div>

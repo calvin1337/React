@@ -14,7 +14,8 @@ class Blog extends Component {
         posts: [],
         showPost: false,
         showModal: false,
-        key: ""
+        key: "",
+        currentPost: {}
     }
 
 
@@ -55,7 +56,7 @@ class Blog extends Component {
                   
                   this.setState({posts: arr1})
                   this.setState({key: arr1[0].key})
-                  
+                  this.setState({currentPost: arr1[0]})
                   console.log(arr1)
             } else return null;
                 
@@ -71,24 +72,34 @@ class Blog extends Component {
         axios.delete(`https://react-first-project-4e07c.firebaseio.com/Blog/${key}.json`)
         .then(res => this.setState({ posts:[...this.state.posts.filter
             (post => post.key !== key)]}))  
-            console.log(this.state.posts, "afterdelete")
+            this.setState({currentPost: {}})
+
         }
 
-    postSelectedHandler = (key) => {
-           
-    }
     
+    postSelectedHandler = (key) => {
+           this.setState({key: key})
+        //    this.setState({currentPost: this.state.posts.map(post =>{
+        //     if(post.id === key){
+        //       console.log(post)
+    //     //     } 
+    //         return post;
+    //       })});
+    // }
+     for(let i = 0; i < this.state.posts.length; i++){
+         if(this.state.posts[i].id === key) {
+             this.setState({currentPost: this.state.posts[i]})
+         }
+     }
+
+    }
 
 
     postCloseHandler = () => {
         console.log("hello")
     }
 
-    currentPost = () => {
-         
-            
-
-    }
+    
 
    
 
@@ -113,14 +124,14 @@ class Blog extends Component {
 
         
 
-       let postsBlog = this.state.posts.slice(0,1).map(post => {
-            return (
+    //    let postsBlog = this.state.posts.slice(0,1).map(post => {
+    //         return (
                 
-                <BlogPost key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} />
+    //             <BlogPost key={post.id} content={post.content} time={post.time} id={post.id} day={post.day} month={post.month} title={post.title} >
 
                 
                 
-            )})
+    //         )})
      
        
     
@@ -149,7 +160,7 @@ class Blog extends Component {
 
 
         <div className={style.BlogMainContent}>  
-                   {postsBlog}
+        <BlogPost key={this.state.keys} content={this.state.currentPost.content} time={this.state.currentPost.time} id={this.state.currentPost.id} day={this.state.currentPost.day} month={this.state.currentPost.month} title={this.state.currentPost.title} />
         </div>
         
         
