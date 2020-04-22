@@ -1,0 +1,36 @@
+
+.todoItem{
+    color:white;
+    font-family:sans-serif;
+    text-align:left;
+    height:50px;
+    display:flex;
+    padding:10px;
+    align-items:center;
+    justify-content:space-between;
+    font-size:30px;
+    transition: all .2s ease;
+  }
+  
+  .todoItem:hover{
+    background: rgba(0, 0, 0, .05);
+    cursor: pointer;
+    color: white;
+    border-radius:5px;
+  }
+  
+  .removeTask {
+      opacity: 0;
+      text-decoration: none;
+    color: #7f8c8d;
+    font-size:20px;
+    font-family:san-serif;
+    transition: all .2s ease;
+  }
+
+  .todoItem:hover .removeTask{ 
+  opacity: 1;
+  color:#6A7B83;
+  }
+
+  
