@@ -1,0 +1,6 @@
+.todoContainer{
+    background:#455a64;
+    box-sizing:border-box;
+    height: calc(100vh - 4rem);
+}
+
