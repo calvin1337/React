@@ -32,5 +32,9 @@
   opacity: 1;
   color:#6A7B83;
   }
+  .todoItem:active .removeTask{ 
+    opacity: 1;
+    color:red;
+    }
 
   
