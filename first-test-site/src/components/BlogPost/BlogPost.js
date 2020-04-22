@@ -7,11 +7,6 @@ class BlogPost extends Component  {
   
  
   render(){
-
-    
-
-
-    
     return (
         <React.Fragment>
         <div className={style.post}>

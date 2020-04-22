@@ -17,8 +17,8 @@ class Blog extends Component {
         key: "",
         currentPost: {},
         defaultPost: {
-            title: "Welcome To My Blog",
-            content: "Their Seems to be no posts try adding one",
+            title: "a diam sollicitudin tempor id",
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         }
     }
 
@@ -81,7 +81,7 @@ class Blog extends Component {
 
         }
 
-        postChanged = (key) => {
+    postChanged = (key) => {
 
             for(let i = 0; i < this.state.posts.length; i++){
                 if(this.state.posts[i].id !== key) {
