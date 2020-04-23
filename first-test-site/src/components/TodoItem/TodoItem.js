@@ -19,7 +19,7 @@ export class TodoItem extends Component {
             <p style={this.getStyle()}>{this.props.todo}</p>
             <span>
                 <button onClick={this.props.onComplete} className={styles.doneTask}> <FontAwesomeIcon icon={faCheck} size="2x"/></button>
-                <button  className={styles.editTask}> <FontAwesomeIcon icon={faEdit} size="2x"/></button>
+                <button onClick={this.props.onEdit} className={styles.editTask}> <FontAwesomeIcon icon={faEdit} size="2x"/></button>
                 <button onClick={this.props.onDelete} className={styles.removeTask}> <FontAwesomeIcon icon={faTrash} size="2x"/></button>
             </span>
           </div>

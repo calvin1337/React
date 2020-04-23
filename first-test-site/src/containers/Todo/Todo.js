@@ -9,7 +9,9 @@ export class Todo extends Component {
         todos : [
 
         ],
-        newTodo: ""
+        newTodo: "",
+        editing: false,
+        editingId: ""
     }
 
     componentDidMount(){
@@ -31,6 +33,12 @@ export class Todo extends Component {
             }
             this.setState({todos: todos})
         })
+
+        if(this.state.editing === true){
+            this.setState({editing: false})
+            let title = document.getElementById("todoInput");
+            title.value = ""
+        }
     }
 
 
@@ -45,10 +53,24 @@ export class Todo extends Component {
     changedHandle = (e) => {
       
         if(e.keyCode === 13){
-            
-           let title = document.getElementById("todoInput");
-           this.addTodo(title.value);
-           title.value = ""
+            if(this.state.editing === false){
+                let title = document.getElementById("todoInput");
+                this.addTodo(title.value);
+                 title.value = ""
+            } else if (this.state.editing === true){
+                this.state.todos.map(todo => {
+                    if(todo.id === this.state.editingId){
+                        let title = document.getElementById("todoInput");
+                        let data = {
+                            ...todo,
+                            title: title.value
+                        }
+                        axios.put(`https://react-first-project-4e07c.firebaseio.com/Todo/${this.state.editingId}.json`, data)
+                        .then(res => this.getTodos(),);
+                    }
+                 })
+            }
+           
         }
             
     }
@@ -75,7 +97,18 @@ export class Todo extends Component {
           
     }
 
-    
+    editTodo = (id) => {
+        let input = document.getElementById("todoInput")
+        this.state.todos.map(todo => {
+            if(todo.id === id){
+                input.value = todo.title;
+                this.setState({editing: true})
+                this.setState({editingId: todo.id})
+
+            }
+
+        })
+    }
     
 
 
@@ -99,7 +132,7 @@ export class Todo extends Component {
         let todoItems = "" 
 
         todoItems = this.state.todos.map((todo) => (
-            <TodoItem completed={this.state.completed} key={todo.id} todo={todo.title} onComplete={() => this.postCompleteHandler(todo.id)} onDelete={() => this.postClickHandler(todo.id)} completed={todo.completed}/>
+            <TodoItem onEdit={() => this.editTodo(todo.id)}completed={this.state.completed} key={todo.id} todo={todo.title} onComplete={() => this.postCompleteHandler(todo.id)} onDelete={() => this.postClickHandler(todo.id)} completed={todo.completed}/>
         ))
 
 
