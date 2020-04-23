@@ -35,7 +35,11 @@ export class Todo extends Component {
 
 
     postClickHandler = (id) => {
-        console.log(id)
+        axios.delete(`https://react-first-project-4e07c.firebaseio.com/Todo/${id}.json`)
+        .then(res => this.setState({ todos:[...this.state.todos.filter
+            (todo => todo.id !== id)]}))  
+            
+           
     }
 
     changedHandle = (e) => {
