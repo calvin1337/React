@@ -57,9 +57,22 @@ export class Todo extends Component {
         this.setState({todos: this.state.todos.map(todo =>{
             if(todo.id === id){
               todo.completed = !todo.completed
-            } 
-            return todo;
+            } return todo
+
+
           })});
+         
+         this.state.todos.map(todo => {
+            if(todo.id === id){
+                let data = {
+                    ...todo
+                }
+                axios.put(`https://react-first-project-4e07c.firebaseio.com/Todo/${id}.json`, data)
+                .then(res => console.log(res.data));
+            }
+         })
+
+          
     }
 
     
@@ -119,9 +132,7 @@ const h1Style = {
     padding: "50px"
     }
 
-    const displayNone = {
-        display: "none"
-    }
+    
 
 export default Todo
 

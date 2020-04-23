@@ -132,7 +132,7 @@ class Blog extends Component {
 
       
       closeModal = (e) => {
-        if(e.target.className == "modal"){
+        if(e.target.className === "modal"){
            this.setState({showModal : !this.state.showModal})
             
         }
@@ -172,7 +172,7 @@ class Blog extends Component {
         
         <React.Fragment>
         <div className={style.BlogLandingPage}>
-        <h1>Blog Landing Page</h1>
+        <h1>Welcome To My Blog!</h1>
         </div>
         <div onClick={this.closeModal} > 
             <Modal submitted={this.props.submitted}  className="modal"  showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
