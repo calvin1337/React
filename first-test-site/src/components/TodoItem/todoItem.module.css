@@ -19,7 +19,7 @@
     border-radius:5px;
   }
   
-  .removeTask {
+  .removeTask, .doneTask, .editTask{
       opacity: 0;
       text-decoration: none;
     color: #7f8c8d;
@@ -28,13 +28,28 @@
     transition: all .2s ease;
   }
 
-  .todoItem:hover .removeTask{ 
+  .todoItem:hover .doneTask, .todoItem:hover .removeTask, .todoItem:hover .editTask{ 
   opacity: 1;
   color:#6A7B83;
   }
-  .todoItem:active .removeTask{ 
-    opacity: 1;
+  .todoItem button{
+    background:none;
+  }
+  
+  .removeTask:active{
     color:red;
+  }
+
+    
+    .removeTask:hover{
+      color:red !important;
     }
 
+    .doneTask:hover{
+      color:green !important;
+    }
+
+    .editTask:hover{
+      color:rgb(66, 184, 221) !important;
+    }
   

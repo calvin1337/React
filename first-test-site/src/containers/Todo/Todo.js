@@ -53,6 +53,15 @@ export class Todo extends Component {
             
     }
 
+    postCompleteHandler = (id) => {
+        this.setState({todos: this.state.todos.map(todo =>{
+            if(todo.id === id){
+              todo.completed = !todo.completed
+            } 
+            return todo;
+          })});
+    }
+
     
     
 
@@ -73,10 +82,11 @@ export class Todo extends Component {
     
     render() {
 
+        
         let todoItems = "" 
 
         todoItems = this.state.todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo.title} onClick={() => this.postClickHandler(todo.id)} completed={todo.completed}/>
+            <TodoItem completed={this.state.completed} key={todo.id} todo={todo.title} onComplete={() => this.postCompleteHandler(todo.id)} onDelete={() => this.postClickHandler(todo.id)} completed={todo.completed}/>
         ))
 
 
