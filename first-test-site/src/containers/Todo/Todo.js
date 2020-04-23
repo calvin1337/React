@@ -13,6 +13,13 @@ export class Todo extends Component {
     }
 
     componentDidMount(){
+        
+        this.getTodos()
+        
+       
+    }
+
+    getTodos = () => {
         axios.get("https://react-first-project-4e07c.firebaseio.com/Todo.json")
         .then(res => {
             const todos = [];
@@ -24,14 +31,11 @@ export class Todo extends Component {
             }
             this.setState({todos: todos})
         })
-        
-       
     }
 
 
-
-    postClickHandler = () => {
-        console.log("Hello")
+    postClickHandler = (id) => {
+        console.log(id)
     }
 
     changedHandle = (e) => {
@@ -42,8 +46,6 @@ export class Todo extends Component {
            this.addTodo(title.value);
            title.value = ""
         }
-
-       
             
     }
 
@@ -58,7 +60,7 @@ export class Todo extends Component {
         }
 
         axios.post("https://react-first-project-4e07c.firebaseio.com/Todo.json" , data)
-        .then(res => console.log(res.data))
+        .then(res => this.getTodos())
         
       }
 
@@ -66,6 +68,14 @@ export class Todo extends Component {
 
     
     render() {
+
+        let todoItems = "" 
+
+        todoItems = this.state.todos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo.title} onClick={() => this.postClickHandler(todo.id)} completed={todo.completed}/>
+        ))
+
+
         return (
             <div className={styles.todoContainer}>
 
@@ -78,7 +88,7 @@ export class Todo extends Component {
                          </div>
 
                         <div className={styles.TodoList}>
-                            <TodoItem onClick={this.postClickHandler}/>
+                            {todoItems}
                         </div>
                     </div>
             </div>
