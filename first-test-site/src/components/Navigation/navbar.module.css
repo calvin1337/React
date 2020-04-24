@@ -70,10 +70,7 @@ font-family: Arial, Helvetica, sans-serif;
       display:none;
     }
      
-    .navToggle {
-      display: block;
-      padding-left:20px;
-    }
+    
 
     .NavToggleLinks{
       background-color: #2e2e2e;
@@ -81,16 +78,25 @@ font-family: Arial, Helvetica, sans-serif;
       top: 0;
       left: 0;
       width:200px;
-      height:100vh;
+      height:100%;
       z-index: 100;
-      /* transform: translate(-100%); */
+      padding-top:30px;
+      transform: translate(-100%);
+    }
+
+    .navToggleBtn{
+      position: absolute;
+      top:20px;
+      left:20px;
+      color:white;
+      z-index: 500;
     }
 
     .navLogoToggle{
-      display: block;
+      display:block;
     }
 
-    .navToggleBtn {
+    .navToggle {
       display: block;
     }
 
@@ -116,6 +122,20 @@ font-family: Arial, Helvetica, sans-serif;
     .NavToggleLinks .navItemToggle:first-of-type{
       border-top: 2px solid rgba(200, 200, 200, 0.1)
     }
-    
- }
+
+    #navbar{
+      background:transparent;
+      height:0
+    }
+
+    body{
+      transition: transform 0.3s ease;
+    }
+     
+     
+     .openNav{
+      transform: translateX(200px) ;
+     }
   
+    
+}

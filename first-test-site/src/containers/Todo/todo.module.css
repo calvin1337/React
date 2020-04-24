@@ -32,6 +32,12 @@
     @media(max-width:600px){
        .TodoListContainer{
             width: 90%;
+            
+        }
+
+        .todoContainer{
+            height: 100vh;
+            padding-top: 50px;
         }
         
     }
