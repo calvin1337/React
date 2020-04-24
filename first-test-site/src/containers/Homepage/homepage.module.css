@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas: ". .";
+  grid-template-areas: "picture text";
   height: calc(100vh - 4rem);
   justify-items: center;
   align-items: center;
@@ -16,7 +16,11 @@
   display: block;
   justify-items: left !important;
   width: 100%;
-  
+  grid-area: text;
+}
+
+.picsocialContainer{
+  grid-area: picture;
 }
 
 .headerText{
@@ -39,4 +43,38 @@
   text-decoration: none;
   color:#92A1CF;
   font-family: sans-serif;
+}
+
+
+
+@media(max-width:600px){
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "picture" "text";
+  }
+
+  .picsocialContainer{
+    padding-top:50px;
+  }
+
+  .headerText{
+    width: 100%;
+    font-size:1.8rem;
+    padding:5px;
+    text-align: left;
+  }
+  .aboutText{
+    padding:10px;
+    
+  }
+
+  .subText{
+    padding-top:20px;
+    font-size: 1.3rem;
+    padding:10px;
+  }
+  
 }

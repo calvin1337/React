@@ -33,7 +33,7 @@ export class Navbar extends Component {
     render() {
         return (
             <React.Fragment>
-            <nav id="navbar">
+            <nav className={styles.navbar} id="navbar">
                 
                 
                 <div className={styles.NavToggleLinks}>
