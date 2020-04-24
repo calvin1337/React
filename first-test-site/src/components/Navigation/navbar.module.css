@@ -48,5 +48,74 @@ font-family: Arial, Helvetica, sans-serif;
     line-height: 3em;
   }
 
-  
+  .navToggle{
+    display:none;
+  }
+  .navToggleBtn{
+    display:none;
+  }
+
+  .navLogoToggle{
+    display:none;
+  }
+
+  /* Mobile */
+  @media(max-width:600px){
+    
+    .navItem{
+      display:none;
+    }
+
+    .navLogo {
+      display:none;
+    }
+     
+    .navToggle {
+      display: block;
+      padding-left:20px;
+    }
+
+    .NavToggleLinks{
+      background-color: #2e2e2e;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width:200px;
+      height:100vh;
+      z-index: 100;
+      /* transform: translate(-100%); */
+    }
+
+    .navLogoToggle{
+      display: block;
+    }
+
+    .navToggleBtn {
+      display: block;
+    }
+
+    .navItemToggle{
+      display:block;
+    }
+
+    .NavToggleLinks .navItemToggle{
+      padding:0;
+      list-style-type: none;
+      margin:0;
+    }
+
+    .NavToggleLinks .navItemToggle{
+      border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+      padding:20px;
+    }
+    .NavToggleLinks .navItemToggle{
+      text-decoration: none;
+      color: #fff
+    }
+
+    .NavToggleLinks .navItemToggle:first-of-type{
+      border-top: 2px solid rgba(200, 200, 200, 0.1)
+    }
+    
+ }
   

@@ -7,20 +7,31 @@
 .TodoListContainer{
     text-align: center;
     width:70%;
-    margin: auto
+    margin: auto;
+    
     }
     
 
 .inputContainer input{
     width: 100%;
-    height: 60px;
+    height: 80px;
     background: none;
     border: none;
     border-bottom: 1px solid #bdc3c7;
     outline: none;
     color: white;
+    font-size:20px;
+
      }
 
  .TodoList{
     padding-top:50px;
+    }
+
+    /* Mobile */
+    @media(max-width:600px){
+       .TodoListContainer{
+            width: 90%;
+        }
+        
     }

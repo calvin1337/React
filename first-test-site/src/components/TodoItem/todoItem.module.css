@@ -14,7 +14,6 @@
   
   .todoItem:hover{
     background: rgba(0, 0, 0, .05);
-    cursor: pointer;
     color: white;
     border-radius:5px;
   }
@@ -26,6 +25,7 @@
     font-size:20px;
     font-family:san-serif;
     transition: all .2s ease;
+    cursor: pointer;
   }
 
   .todoItem:hover .doneTask, .todoItem:hover .removeTask, .todoItem:hover .editTask{ 
@@ -53,3 +53,16 @@
       color:rgb(66, 184, 221) !important;
     }
   
+
+  /* Mobile */
+  @media(max-width:600px){
+    .todoItem{
+         font-size: 16px;
+     }
+
+     .removeTask, .doneTask, .editTask{
+       font-size: 12px;
+       height: 70px;
+     }
+     
+ }
