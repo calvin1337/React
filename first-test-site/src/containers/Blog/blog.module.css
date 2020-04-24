@@ -150,3 +150,18 @@
     background: #474747;
     cursor: pointer;
   }
+
+  @media(max-width:600px){
+    .gridContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 1px 1px;
+        grid-template-areas:  "BlogSideBar" "BlogMainContent";
+        padding-top:20px;
+  }
+
+  .BlogSideBar{
+      height:500px;
+  }
+}

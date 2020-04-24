@@ -100,3 +100,36 @@ img{
   
 }
 
+@media(max-width:600px){
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr;
+    gap: 20px ;
+    grid-template-areas: "Intro" "Example-1" "Example-2" "Example-3";
+}
+
+.Intro{
+  background: #eeeeee;
+  font-size: 1.5 rem;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+
+}
+.Intro h3{
+  text-align: center;
+  padding-top:50px;
+  font-size: 2rem;
+}
+
+.Intro p{
+  
+  background: #eeeeee;;
+}
+
+.button {
+  border-radius: 0;
+}
+
+}
