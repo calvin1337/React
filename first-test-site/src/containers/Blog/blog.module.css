@@ -157,17 +157,30 @@
     .gridContainer {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 1px 1px;
-        grid-template-areas:  "BlogSideBar" "BlogMainContent";
-        padding-top:20px;
+        grid-template-areas:   "BlogMainContent" "BlogSideBar";
+        padding-top: 20px;
   }
 
   .BlogSideBar{
-      height:500px;
+      height:auto;
+      background-color: white;
+      padding:0;
+      margin: 0;
   }
 
   .BlogLandingPage{
       background-position: center;
   }
+
+  .BlogMainContent{
+      background-color: white;
+      
+      margin: 0;
+
+  }
 }
+
+
+    

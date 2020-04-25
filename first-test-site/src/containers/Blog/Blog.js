@@ -191,6 +191,11 @@ class Blog extends Component {
              <div className={style.BlogSideBarLinks}>
                 <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
+                <ul>
+                
+               
+                
+                </ul>
              </div>
              <a onClick={this.toggleModal} className={style.button}>Add Post</a>
              <a className={style.buttonEdit}>Edit Post</a>
