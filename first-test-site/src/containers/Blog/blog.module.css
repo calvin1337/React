@@ -19,22 +19,28 @@
     color: white;
 }
 
+body{
+    background-color: #cccccc;
+}
+
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     grid-template-rows: 1fr 1fr;
     gap: 1px 1px;
     grid-template-areas: "BlogMainContent BlogSideBar" "BlogMainContent BlogSideBar";
-    height: auto;
+    height: 100%;
     justify-items: center;
-    padding-top: 100px;
-    background: white;
+    padding-top: 50px;
+    background: #cccccc
+    
   }
   
   .BlogMainContent { 
       grid-area: BlogMainContent; 
       width:100%;
       height: auto;
+      
       
           }
           .BlogMainContent h1{
@@ -49,7 +55,9 @@
               width: 100%;
             position: relative;
             text-align: center;
-            height: 300px;
+            height:100%;
+            background: #cccccc;
+
             }
             
             
@@ -60,10 +68,10 @@
       width:100%;
       display:grid;
       width: 100%;
-    position: relative;
     text-align: center;
-    height: 730px;
-    
+    height:100%;
+    background: #cccccc;
+
     }
 
     .BlogSideBar h1 {
@@ -82,10 +90,9 @@
 
 
 .BlogSideBar .button{
-    margin-top: auto;
+    
     background: #042557;
     color:#fff;
-    border-radius: 5px;
     text-decoration: none;
     font-weight: 800;
     text-align: center;
@@ -93,15 +100,15 @@
     width: 80%;
     display:inline-block;
     justify-items: start;
-    margin-top:20px;
-    
+   
   }
   
   .BlogSideBarContainer{
       background: #eee;
       margin: 30px;
       box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-
+      border-radius: 10px;
+      height:520px
   }
 
   .BlogSideBarLinks{
@@ -112,6 +119,7 @@
   .LatestPost{
       color: #474747;
       float:left;
+      padding-top:30px;
   }
 
   .BlogSideBarPostContainer{
@@ -119,38 +127,17 @@
     margin: 30px;
   }
 
-  .BlogSideBar .buttonDelete{
-    margin-top: auto;
-    color:#fff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 800;
-    text-align: center;
-    padding: 15px;
-    width: 80%;
-    display:inline-block;
-    justify-items: start;
-    margin-top:20px;
-    background: #b80214;
-    cursor: pointer;
-
+.buttonDelete{
+    background: #b80214 !important;
+   
   }
 
+ .buttonEdit{  
+    background: #474747 !important;
+  }
 
-  .BlogSideBar .buttonEdit{
-    margin-top: auto;
-    color:#fff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 800;
-    text-align: center;
-    padding: 15px;
-    width: 80%;
-    display:inline-block;
-    justify-items: start;
-    margin-top:20px;
-    background: #474747;
-    cursor: pointer;
+  .btnContainer{
+      display:flex;
   }
 
   @media(max-width:600px){
@@ -164,8 +151,7 @@
   }
 
   .BlogSideBar{
-      height:auto;
-      background-color: white;
+      height:300px;
       padding:0;
       margin: 0;
   }
@@ -175,7 +161,6 @@
   }
 
   .BlogMainContent{
-      background-color: white;
       
       margin: 0;
 
@@ -184,3 +169,6 @@
 
 
     
+.testing{
+    z-index: 1050;
+}

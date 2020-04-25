@@ -174,8 +174,9 @@ class Blog extends Component {
         <div className={style.BlogLandingPage}>
         <h1>Welcome To My Blog!</h1>
         </div>
-        <div onClick={this.closeModal} > 
+        <div className={style.testing} onClick={this.closeModal} > 
             <Modal submitted={this.props.submitted}  className="modal"  showModal={this.state.showModal} toggle={this.toggleModal}> </Modal>
+            </div>
         <div className={style.gridContainer}>
 
 
@@ -189,6 +190,11 @@ class Blog extends Component {
              <div className={style.BlogSideBarContainer}> 
 
              <div className={style.BlogSideBarLinks}>
+                  <div className={style.btnContainer}>
+                 <a onClick={this.toggleModal} className={style.button}>Add Post</a>
+                 <a className={[style.button, style.buttonEdit].join(" ")}>Edit Post</a>
+                 <a onClick={() => this.postDeletedHandler(this.state.key)} className={[style.button, style.buttonDelete].join(" ")}>Delete Post</a>
+             </div>
                 <h3 className={style.LatestPost}>Latest Posts:</h3><br></br>
                 {postsLinks}
                 <ul>
@@ -197,9 +203,8 @@ class Blog extends Component {
                 
                 </ul>
              </div>
-             <a onClick={this.toggleModal} className={style.button}>Add Post</a>
-             <a className={style.buttonEdit}>Edit Post</a>
-             <a onClick={() => this.postDeletedHandler(this.state.key)} className={style.buttonDelete}>Delete Post</a>
+            
+             
 
 
             </div>
@@ -215,7 +220,7 @@ class Blog extends Component {
             
        
         </div>
-        </div>
+       
         
         </React.Fragment>
     )}
