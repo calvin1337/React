@@ -15,6 +15,12 @@ export class Navbar extends Component {
     }
 
     
+    componentDidMount() {
+        
+        console.log(this.props.match, "hello")
+             
+     } 
+    
 
     toggleNavHandler = () => {
         
@@ -28,6 +34,11 @@ export class Navbar extends Component {
         this.setState({toggle: false})
 
     }
+}
+
+toggleCloseMenu = () => {
+    this.setState({toggle: false})
+    this.toggleNavHandler()
 }
 
     render() {
@@ -44,11 +55,10 @@ export class Navbar extends Component {
                 
     
                 </div>
-    
-                <NavLink  className={styles.navItemToggle}  exact  to="/">Home</NavLink>
-                <NavLink  className={styles.navItemToggle} to="/about">About</NavLink>
-                <NavLink  className={styles.navItemToggle} to="/blog">Blog</NavLink>
-                <NavLink  className={styles.navItemToggle} to="/todo">Todo</NavLink>
+                <NavLink  onClick={this.toggleCloseMenu} className={styles.navItemToggle}  exact  to="/">Home</NavLink>
+                <NavLink  onClick={this.toggleCloseMenu} className={styles.navItemToggle} to="/about">About</NavLink>
+                <NavLink  onClick={this.toggleCloseMenu} className={styles.navItemToggle} to="/blog">Blog</NavLink>
+                <NavLink  onClick={this.toggleCloseMenu} className={styles.navItemToggle} to="/todo">Todo</NavLink>
     
                 </ul>
     

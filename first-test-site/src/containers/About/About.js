@@ -12,7 +12,7 @@ import style from "./about.module.css";
                 <p> This is my first personal react project I've tried to put this together using things I've learned so far and put it into practice.
                     I've decided not to use a css framework for this as I thought It would be good practice using vanilla css. 
                      </p>
-                <h3>I Hope to add These 3 things to this site.</h3>
+                <h3>I hope to add these 3 things to this site.</h3>
                 </div>
             
             
