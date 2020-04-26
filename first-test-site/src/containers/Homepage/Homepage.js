@@ -17,12 +17,14 @@ import SocialLinks from "../../components/SocialLinks/SocialLinks";
 
         <div className={style.aboutText}>
             <h1 className={style.headerText}>Hello my name Is Calvin Donaldson</h1> <h1 className={style.headerText}>This Is my first react based project!</h1>
-            <h2 className={style.subText}>Find out more what I plan on adding to this project by <Link to ='/href' >clicking here</Link> </h2>
+            <h2 className={style.subText}>Find out more what I plan on adding to this project by <Link className={style.underline} to ='/href' >clicking here</Link> </h2>
 
         </div>        
         
         </div>
     )
 }
+
+
 
 export default Homepage;

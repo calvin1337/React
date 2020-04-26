@@ -45,7 +45,15 @@
   font-family: sans-serif;
 }
 
+.underline  {
+  border-bottom: 1px solid #fff;
+}
 
+.underline:hover{
+  border-bottom: 3px solid #fff;
+
+  
+}
 
 @media(max-width:600px){
   .gridContainer {

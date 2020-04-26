@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from "react-router-dom";
 import style from "./about.module.css";
+import Card from "../../components/Card/Card";
 
  function About() {
     return (
@@ -14,63 +14,19 @@ import style from "./about.module.css";
                      </p>
                 <h3>I hope to add these 3 things to this site.</h3>
                 </div>
-            
-            
-            <div className={style.Example1}>
-                
-                <div className={style.card}>
-                    <figure>
-                        <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
-                    </figure>
-                    <h2>Blog</h2>
-                    <p>A blog using a database for displaying posts and creating</p><br></br>
-
-                    <Link to="/" className={style.button}>Learn More</Link>
                     
-                </div>
+                    <div className={style.cardOne}><Card /></div>
+                    <div className={style.cardTwo}><Card /></div>
+                    <div className={style.cardThree}><Card /></div>
 
-            </div>
+                
             
-            
-            
-            <div className={style.Example2}>
-
-                 
-            <div className={style.card}>
-                    <figure>
-                        <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
-                    </figure>
-                    <h2>To-Do-List</h2>
-                    <p>A to-do-list using a database for displaying and creating</p><br></br>
-
-                    <Link to="/" className={style.button}>Learn More</Link>
-                </div>
-
-
-            </div>
-
-
-
-            <div className={style.Example3}>
-
-             
-            <div className={style.card}>
-                    <figure>
-                        <img alt={"random from picsum"}src={"https://picsum.photos/200/300"} />
-                    </figure>
-                    <h2>Login Authentication</h2>
-                    <p>Adding a login page and authentication to be able to create blog posts</p><br></br>
-
-                    <Link to="/" className={style.button}>Learn More</Link>
-                </div>
-
-
-
-            </div>
+           
             
             </div>
             
         </div>
+        
     )
 }
 

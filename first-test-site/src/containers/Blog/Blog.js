@@ -155,7 +155,7 @@ class Blog extends Component {
      
        
     
-        let postsLinks = this.state.posts.map(post => {
+        let postsLinks = this.state.posts.slice(0,2).map(post => {
         return (
         
         <BlogLink clicked={() => this.postSelectedHandler(post.id)} key={post.id} id={post.id} title={post.title} dateposted={(post.day + " " + post.month)}/>

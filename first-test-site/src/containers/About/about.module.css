@@ -7,9 +7,9 @@
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1.5fr;
+  grid-template-rows: 1fr 1fr;
   gap: 1px 1px;
-  grid-template-areas: "Intro Intro Intro" "Example-1 Example-2 Example-3";
+  grid-template-areas: "Intro Intro Intro" "cardOne cardTwo cardThree";
   height:calc(100vh - 4rem);
   background: #f1f1f4;
 
@@ -27,82 +27,30 @@
   padding-top:50px;
 }
 
-.Example1 { 
-  grid-area: Example-1; 
-  padding: 25px;
-  text-align: center;
-  height: 100%;
-  
+.cardOne{
+grid-area: cardOne;
+border: 1px solid red;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
+.cardTwo{
+grid-area: cardTwo;
+border: 1px solid blue;
+display: flex;
+justify-content: center;
+align-items: center;
 
-.Example2 { 
-  grid-area: Example-2; 
-  
-  padding: 25px;
-  text-align: center;
-  height: 100%;
 }
 
-.Example3 { 
-  grid-area: Example-3; 
- 
-  padding: 25px;
-  text-align: center;
-  height: 100%;
+.cardThree{
+grid-area: cardThree;
+border: 1px solid green;
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
-
-.card {
-  border: 1px solid #cccccc;
-  height:100%;
-  background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.card h2{
-  /* margin: 0 0 1rem; */
-  display:inline-block;
-  text-align: center;
-  border-bottom: #222222 1px solid;
-  
-}
-
-figure {
-  height: 180px;
-  width: 100% ;
-  
-}
-
-.card p {
-  padding: 10px;
-  font-size: 16px;
-  
-}
-
-img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  margin: -1rem;
-}
-
-.button{
-  margin-top: auto;
-  background: #042557;
-  color:#fff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 800;
-  text-align: center;
-  padding: 15px;
-  width: 100%;
-  display:block;
-  justify-items: start;
-  margin-top:20px;
-}
-
-
 
 @media(max-width:600px){
   .gridContainer {
@@ -134,8 +82,7 @@ img{
 }
 
 
-.card{
-  background: #eeeeee;
-}
+
 
 }
+
