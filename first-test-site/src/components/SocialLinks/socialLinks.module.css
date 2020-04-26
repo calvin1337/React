@@ -1,0 +1,17 @@
+
+
+.SocialBtn{
+    background: transparent !important;
+    border: 0;
+    color: #eee;
+    margin:10px;
+    font-size: 16px;
+    outline-style: none;
+    padding-top:20px;
+}
+
+.SocialBtn:hover{
+    color:#92A1CF;
+    }
+
+

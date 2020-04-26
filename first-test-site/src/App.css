@@ -5,6 +5,9 @@
     outline:none;
 }
 
+*:focus{
+    outline:none;
+}
 
 .active {
     color:white !important;
