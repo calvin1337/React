@@ -9,7 +9,7 @@ import SocialLinks from "../../components/SocialLinks/SocialLinks";
         <div className={style.gridContainer}>
 
         <div className={style.picsocialContainer}>
-            <PersonalPicture />
+            {/* <PersonalPicture /> */}
             <SocialLinks />
 
 
