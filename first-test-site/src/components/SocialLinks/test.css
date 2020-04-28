@@ -1,53 +1,72 @@
 .fa-stack{
     padding:0;
     margin:0;
-    width: 1.5em;
+    width: 3em;
+    height:3em;
   }
-
+  .tweet{
+    font-size:48px;
+  }
   .fa-facebook{
     font-size:28px;
     }
 
 
 .fa-github{
-    font-size:28px;
+    font-size:40px;
     color:#222;
   }
 
   .github{
-      font-size:25px;
+      font-size:46px;
   }
-
-  .fa-circle{
-    border-radius:20px;
+  .testingtwitter .fa-circle{
+   font-size: 46px;
     
   }
   
-  .instagram{
-  background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size:30px;
-   
-  }
-  
-  .fa-instagram{
-    font-size:25px;
+  .insta1{
+    font-size: 47px;
     color:white;
   }
-  
+
   .insta{
-    color:#222;
-    font-size:30px;
-    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    
+
+    color:transparent;
+    
+    background: -linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    
+    background-clip: text;
+        
     -webkit-background-clip: text;
+    
     -webkit-text-fill-color: transparent;
     
-  }
+    background: -moz-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    content:"fo";
+    font-size:36px;
+    border-radius: 50%;
+    }
 
+    
+    .fa-instagram{
+      font-size:30px;
+      color:white;
+    }
 
 a:hover{
     cursor:pointer;
   }
-  
+
+  .facebook{
+    font-size:46px;
+    }
+
+  .fa-facebook{
+    font-size:40px;
+    }
   
