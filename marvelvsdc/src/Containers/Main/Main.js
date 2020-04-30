@@ -3,6 +3,7 @@ import styles from "../Homepage/homepage.module.css";
 import InfoType from "../../Components/InfoType/InfoType";
 import main from "./main.module.css";
 import Button from "../../Components/Buttons/Buttons";
+import FighterInfo from "../../Components/fighterInfo/fighterInfo";
 
 export class Main extends Component {
     render() {
@@ -17,10 +18,15 @@ export class Main extends Component {
                  <div className={main.leftGridContainer}>
 
                     <div className={main.pictureContainer}>
-                    
+
+                    <img src="/" width="100%" height="420px"></img>
+
+                    <div className={main.winnerBtn}>
+                    <Button btnType="winBtn">Wins</Button>
+                    </div>
                     </div>
                     <div className={main.infoContainer}>
-
+                        <FighterInfo fighterStyle="marvel"/>
                     </div>
                 </div>
             </div>
@@ -31,9 +37,17 @@ export class Main extends Component {
                 <div className={main.rightGridContainer}>
                      
                     <div className={main.pictureContainer}>
+
+                    <img src="/" width="100%" height="420px"></img>
+
+                        <div className={main.winnerBtn}>
+                        <Button btnType="winBtn">Wins</Button>
+
+                        </div>
                     
                     </div>
                     <div className={main.infoContainer}>
+                    <FighterInfo fighterStyle="dc"/>
 
                     </div>
                 </div>

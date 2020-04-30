@@ -29,6 +29,7 @@ margin:auto;
     gap: 1px 1px;
     grid-template-areas: "Picture CardInfo";
     margin:10px;
+    height:500px;
   }
 
   .rightGridContainer {
@@ -55,3 +56,15 @@ margin:auto;
     width:70%;
     height:500px;
   }
+
+  .winnerBtn{
+    border:black 1px solid;
+    height:80px;
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+       justify-content: center
+    
+    }
+
+    
