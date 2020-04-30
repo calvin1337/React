@@ -3,10 +3,68 @@ import styles from "../Homepage/homepage.module.css";
 import InfoType from "../../Components/InfoType/InfoType";
 import main from "./main.module.css";
 import Button from "../../Components/Buttons/Buttons";
+import axios from "axios";
 import FighterInfo from "../../Components/fighterInfo/fighterInfo";
 
 export class Main extends Component {
+
+        state = {
+
+            dc: [
+
+            ],
+            
+            marvel: [
+
+            ]
+            
+        }
+
+        componentDidMount(){
+            this.getMarvelCharacter();
+            this.getDcCharacter();
+        }
+
+        getMarvelCharacter = () => {
+            axios.get("https://marvelvsdc-6041d.firebaseio.com/marvel.json")
+            .then(res => {
+                const character = [];
+                for(let key in res.data){
+                    character.push({
+                        ...res.data[key],
+                        id: key
+                    });
+                }
+                this.setState({marvel: character}, () => {
+                    this.randomMarvelCharacter();
+                });
+            })
+    
+        }
+
+        getDcCharacter = () => {
+            
+        }
+
+        randomDcCharacter = () => {
+            
+        }
+
+        randomMarvelCharacter = () => {
+            alert(this.state.marvel[0].name)
+        }
+
+
+        randomFighters = () => {
+            this.randomDcCharacter()
+            this.randomMarvelCharacter()
+        }
+
+
     render() {
+
+
+
         return (
             <React.Fragment>
             <div className={styles.container}>
@@ -46,7 +104,9 @@ export class Main extends Component {
                         </div>
                     
                     </div>
+
                     <div className={main.infoContainer}>
+
                     <FighterInfo fighterStyle="dc"/>
 
                     </div>
@@ -59,9 +119,15 @@ export class Main extends Component {
        
 
         <div className={main.overlayBox}>
-        <Button btnType="vsBtn">VS</Button>
+
+
+        <Button onClick={this.randomFighters} btnType="vsBtn">VS</Button>
             <InfoType />
-            
+
+
+            <div className={main.tieButton}>
+            <Button btnType="tieBtn">Tie</Button>
+            </div>
         </div>
         
         </React.Fragment>

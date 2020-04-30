@@ -13,25 +13,25 @@ export class FighterInfo extends Component {
 
             <div className={styles.infoContainer}>
             <div style={this.getStyle()}className={styles.infoBlock}>
-               <h1>James Howlett</h1>
+               <h1>{this.props.name}</h1>
             </div>
            <div style={this.getStyle()} className={styles.infoBlock}>
-               <h1>Incredible Hulk #180</h1>
+               <h1>{this.props.firstAppearance}</h1>
             </div>
             <div style={this.getStyle()} className={styles.infoBlock}>
-               <h1>5' 3" (1.60 m)</h1>
+                 <h1>{this.props.height}</h1>
             </div>
             <div style={this.getStyle()} className={styles.infoBlock}>
-               <h1>Mutant</h1>
+               <h1>{this.props.species}</h1>
             </div>
             <div style={this.getStyle()} className={styles.infoBlock}>
-               <h1>Male</h1>
+                <h1>{this.props.gender}</h1>
             </div>
             <div style={this.getStyle()} className={[styles.infoBlock, styles.ability].join(" ")}>
-               <h1>Lorem </h1>
+               <h1>{this.props.ability}</h1>
             </div>
             <div style={this.getStyle()} className={[styles.infoBlock, styles.power].join(" ")}>
-               <h1>Lorem </h1>
+               <h1>{this.props.powers}</h1>
             </div>
           </div>
         )

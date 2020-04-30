@@ -20,6 +20,7 @@ margin:auto;
     text-align:center;
     font-size:40px;
     border:solid black 1px;
+    color:white;
   }
 
   .leftGridContainer {
@@ -67,4 +68,12 @@ margin:auto;
     
     }
 
-    
+    .tieButton{
+      height:92px;
+      border: 1px solid black;
+      margin-top:10px;
+     display: flex;
+      flex-direction: column;
+      align-items: center;
+       justify-content: center
+    }
