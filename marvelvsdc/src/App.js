@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Homepage from "./Containers/Homepage/Homepage"
+import Main from "./Containers/Main/Main"
 export class App extends Component {
 
 
@@ -22,7 +23,7 @@ export class App extends Component {
         <h1>About</h1>
       )} />
        <Route path="/play" render={props => (
-          <h1>Play</h1>
+         <Main />
         )} />
         </Router>
        

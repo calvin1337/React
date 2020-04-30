@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: calc(100vh - 56px);
+  max-height: calc(100vh - 56px);
   gap: 0px 0px;
   grid-template-areas: "left right";
 }
