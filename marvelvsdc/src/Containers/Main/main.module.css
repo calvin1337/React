@@ -5,8 +5,53 @@ text-align: center;
 left: 1%;
 right: 1%;
 width:20%;
-top:0%;
-height:100%;
+top:8%;
+height:92%;
 border:1px solid white;
 margin:auto;        
 }
+
+.fighterName{
+    border: 1px solid yellow;
+    margin-top:10px;
+  }
+  
+  .fighterName h1{
+    text-align:center;
+    font-size:40px;
+    border:solid black 1px;
+  }
+
+  .leftGridContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "Picture CardInfo";
+    margin:10px;
+  }
+
+  .rightGridContainer {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "CardInfo Picture";
+    margin:10px;
+    justify-items:right;
+
+  }
+  
+  .pictureContainer { 
+    grid-area: Picture;
+    height:420px;
+    width:100%;
+    border:1px solid white;
+  }
+  
+  .infoContainer{ 
+    grid-area: CardInfo; 
+    border: 1px solid white;
+    width:70%;
+    height:500px;
+  }
