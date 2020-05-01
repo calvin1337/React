@@ -4,6 +4,7 @@ import InfoType from "../../Components/InfoType/InfoType";
 import main from "./main.module.css";
 import Button from "../../Components/Buttons/Buttons";
 import axios from "axios";
+import Modal from "../../Components/Modal/Modal";
 import FighterInfo from "../../Components/fighterInfo/fighterInfo";
 
 export class Main extends Component {
@@ -23,7 +24,9 @@ export class Main extends Component {
             },
             currentMarvel: {
 
-            }
+            },
+
+            showModal: true
             
         }
 
@@ -91,8 +94,21 @@ export class Main extends Component {
                alert(this.state.currentMarvel.record.loss)
         }
 
-    render() {
+        closeModal = (e) => {
+            if(e.target.className === "modal"){
+                this.setState({showModal : !this.state.showModal})
+                 
+             }
+            
+        }
 
+        test = (e) => {
+            console.log(e.target)
+        }
+
+    render() {
+            
+        
 
 
         return (
@@ -101,7 +117,7 @@ export class Main extends Component {
 
             <div className={styles.left}>
                 <div className={main.fighterName}>
-                <h1>{this.state.currentMarvel.id}</h1>
+                <h1>{this.state.currentMarvel.heroname}</h1>
                  </div>
                  <div className={main.leftGridContainer}>
 
@@ -128,7 +144,7 @@ export class Main extends Component {
             </div>
             <div className={styles.right}>
                 <div className={main.fighterName}>
-                <h1>{this.state.currentDc.id}</h1>
+                <h1>{this.state.currentDc.heroname}</h1>
                 </div>
                 <div className={main.rightGridContainer}>
                      
@@ -163,6 +179,7 @@ export class Main extends Component {
             </div>
             
        
+            <Modal onClick={(e) => this.closeModal(e)} className="modal" display={this.state.showModal}/>
 
         <div className={main.overlayBox}>
 
@@ -175,7 +192,6 @@ export class Main extends Component {
             <Button onClick={this.tieGame} btnType="tieBtn">Tie</Button>
             </div>
         </div>
-        
         </React.Fragment>
         )
     }
