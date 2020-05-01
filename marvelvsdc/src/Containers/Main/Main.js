@@ -43,7 +43,7 @@ export class Main extends Component {
                     });
                 }
                 this.setState({marvel: character}, () => {
-                    this.randomMarvelCharacter();
+                    this.randomMarvelCharacter(0);
                 });
             })
     
@@ -60,27 +60,36 @@ export class Main extends Component {
                     });
                 }
                 this.setState({dc: character}, () => {
-                    this.randomDcCharacter();
+                    this.randomDcCharacter(0);
                 });
             })
         }
 
 
-        randomDcCharacter = () => {
-            this.setState({currentDc: this.state.dc[0]})
+        randomDcCharacter = (number) => {
+            this.setState({currentDc: this.state.dc[number]})
         }
 
-        randomMarvelCharacter = () => {
-            this.setState({currentMarvel: this.state.marvel[0]})
+        randomMarvelCharacter = (number) => {
+            this.setState({currentMarvel: this.state.marvel[number]})
 
         }
 
 
         randomFighters = () => {
-            this.randomDcCharacter()
-            this.randomMarvelCharacter()
+            let marvelLength = this.state.marvel.length;
+            let dcLength = this.state.dc.length;
+
+            let marvelPick = Math.floor(Math.random() * marvelLength);
+            let dcPick = Math.floor(Math.random() * dcLength);
+
+            this.randomDcCharacter(dcPick)
+            this.randomMarvelCharacter(marvelPick)
         }
 
+        tieGame = () => {
+               alert(this.state.currentMarvel.record.loss)
+        }
 
     render() {
 
@@ -98,7 +107,7 @@ export class Main extends Component {
 
                     <div className={main.pictureContainer}>
 
-                    <img src="/" width="100%" height="420px"></img>
+                    <img src={this.state.currentMarvel.img} width="100%" height="420px"></img>
 
                     <div className={main.winnerBtn}>
                     <Button btnType="winBtn">Wins</Button>
@@ -125,7 +134,7 @@ export class Main extends Component {
                      
                     <div className={main.pictureContainer}>
 
-                    <img src="/" width="100%" height="420px"></img>
+                    <img src={this.state.currentDc.img} width="100%" height="420px"></img>
 
                         <div className={main.winnerBtn}>
                         <Button btnType="winBtn">Wins</Button>
@@ -163,7 +172,7 @@ export class Main extends Component {
 
 
             <div className={main.tieButton}>
-            <Button btnType="tieBtn">Tie</Button>
+            <Button onClick={this.tieGame} btnType="tieBtn">Tie</Button>
             </div>
         </div>
         
