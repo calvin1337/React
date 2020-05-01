@@ -27,11 +27,8 @@ export class FighterInfo extends Component {
             <div style={this.getStyle()} className={styles.infoBlock}>
                 <h1>{this.props.gender}</h1>
             </div>
-            <div style={this.getStyle()} className={[styles.infoBlock, styles.ability].join(" ")}>
-               <h1>{this.props.powers}</h1>
-            </div>
             <div style={this.getStyle()} className={[styles.infoBlock, styles.power].join(" ")}>
-               <h1>{this.props.ability}</h1>
+               <p>{this.props.powers}</p>
             </div>
           </div>
         )

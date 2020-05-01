@@ -25,7 +25,7 @@ export class InfoType extends Component {
             <h1>Powers</h1>
         </div>
         <div className={styles.taleTapeType}>
-            <h1>Abilitys</h1>
+            <h1>Enemy's</h1>
         </div>
   </div>
         )

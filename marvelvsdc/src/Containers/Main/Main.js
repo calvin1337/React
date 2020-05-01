@@ -91,7 +91,7 @@ export class Main extends Component {
         }
 
         tieGame = () => {
-               alert(this.state.currentMarvel.record.loss)
+            //    alert(this.state.currentMarvel.record.loss)
         }
 
         closeModal = (e) => {
@@ -102,9 +102,7 @@ export class Main extends Component {
             
         }
 
-        test = (e) => {
-            console.log(e.target)
-        }
+       
 
     render() {
             

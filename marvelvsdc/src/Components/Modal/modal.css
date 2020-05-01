@@ -1,5 +1,5 @@
 .modal{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
-    width:400px;
-    height:400px;
+    width:500px;
+    height:500px;
     padding: 50px;
 }
