@@ -55,7 +55,8 @@ export class Main extends Component {
                 for(let key in res.data){
                     character.push({
                         ...res.data[key],
-                        id: key
+                        id: key,
+                        
                     });
                 }
                 this.setState({marvel: character}, () => {
@@ -129,27 +130,50 @@ export class Main extends Component {
             
         }
 
-    marvelWin = () => {
-        this.dcLoss()
-        console.log()
+       
 
+    marvelWin = () => {
+        let prevState = this.state.currentMarvelRecord.win
+        this.setState({currentMarvelRecord : {
+            ...this.state.currentMarvelRecord,
+            win: this.state.currentMarvelRecord.win + 1
+        }})
+       this.setState({currentDcRecord : {
+            ...this.state.currentDcRecord,
+            loss: this.state.currentDcRecord.loss + 1
+        }}, () => {
+            this.updateState(this.state.currentMarvel.id);
+        })
+        
+        
     }
+
+    updateState = (id) => {
+        
+        this.state.marvel.map(hero => {
+            if(hero.id === id){
+             
+             hero.record = this.state.currentMarvelRecord
+            
+           
+                
+         }})
+        
+    }   
+    
+
+    componentDidUpdate(prevState) {
+        
+       
+      }
+        
+
     
     dcWin = () => {
-        this.marvelLoss()
+        
     }
 
-    marvelLoss = () => {
-
-
-      
-                
-    }
-
-    dcLoss = () => {
-
-    }
-
+   
        
     
 
