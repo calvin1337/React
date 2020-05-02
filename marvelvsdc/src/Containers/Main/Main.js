@@ -6,6 +6,7 @@ import Button from "../../Components/Buttons/Buttons";
 import axios from "axios";
 import Modal from "../../Components/Modal/Modal";
 import FighterInfo from "../../Components/fighterInfo/fighterInfo";
+import marvelLogo from "../../Images/marvel.png";
 
 export class Main extends Component {
 
@@ -102,7 +103,13 @@ export class Main extends Component {
             
         }
 
-       
+    marvelWin = () => {
+        alert("Marvel WIN")
+    }
+    
+    dcWin = (id) => {
+        alert("DC WIN")
+    }
 
     render() {
             
@@ -124,7 +131,7 @@ export class Main extends Component {
                     <img src={this.state.currentMarvel.img} width="100%" height="420px"></img>
 
                     <div className={main.winnerBtn}>
-                    <Button btnType="winBtn">Wins</Button>
+                    <Button onClick={this.marvelWin} btnType="winBtn">Wins</Button>
                     </div>
                     </div>
                     <div className={main.infoContainer}>
@@ -139,6 +146,9 @@ export class Main extends Component {
                         fighterStyle="marvel"/>
                     </div>
                 </div>
+                <div className={main.Test}>
+                <img id="bnw" className={main.backgroundLogo} src={marvelLogo} width="300" height="150" />
+                </div> 
             </div>
             <div className={styles.right}>
                 <div className={main.fighterName}>
@@ -151,7 +161,7 @@ export class Main extends Component {
                     <img src={this.state.currentDc.img} width="100%" height="420px"></img>
 
                         <div className={main.winnerBtn}>
-                        <Button btnType="winBtn">Wins</Button>
+                        <Button onClick={this.dcWin} btnType="winBtn">Wins</Button>
 
                         </div>
                     
@@ -171,8 +181,12 @@ export class Main extends Component {
 
                     </div>
                 </div>
-                
+                <div className={main.TestDc}>
+                <img src="https://vignette.wikia.nocookie.net/marvel_dc/images/1/12/New_DC_logo.png/revision/latest?cb=20130213193308" width="300" height="150"></img>
+
+                </div> 
             </div>
+            
 
             </div>
             
@@ -189,6 +203,11 @@ export class Main extends Component {
             <div className={main.tieButton}>
             <Button onClick={this.tieGame} btnType="tieBtn">Tie</Button>
             </div>
+
+            <div className={main.bottomVs}>
+                <h1>VS</h1>
+            </div>
+
         </div>
         </React.Fragment>
         )
