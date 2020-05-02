@@ -28,11 +28,15 @@ export class Main extends Component {
             },
 
             currentMarvelRecord: {
-
+                win:0,
+                loss:0,
+                draw: 0
             },
 
             currentDcRecord:{
-
+                win:0,
+                loss: 0,
+                draw: 0
             },
 
             showModal: true
@@ -80,13 +84,26 @@ export class Main extends Component {
 
         randomDcCharacter = (number) => {
             this.setState({currentDc: this.state.dc[number]})
-
+            this.getDcRecord(number)
         }
+
+        getDcRecord = (number) => {
+            this.setState({currentDcRecord: this.state.dc[number].record})
+        }
+
+       
 
         randomMarvelCharacter = (number) => {
             this.setState({currentMarvel: this.state.marvel[number]})
+            this.getMarvelRecord(number)
+        }
+
+        getMarvelRecord = (number) => {
+            this.setState({currentMarvelRecord: this.state.marvel[number].record})
 
         }
+
+   
 
 
         randomFighters = () => {
@@ -123,24 +140,21 @@ export class Main extends Component {
     }
 
     marvelLoss = () => {
-        let data = this.state.currentDc.record;
-        Object.keys(data).map((obj, i) => {
-            return (
-                console.log(obj + " " + data[obj])
-                )
-            })
+
+
+      
+                
     }
 
     dcLoss = () => {
 
     }
 
+       
     
 
     render() {
             
-        
-
 
         return (
             <React.Fragment>
@@ -148,7 +162,9 @@ export class Main extends Component {
 
             <div className={styles.left}>
                 <div className={main.fighterName}>
-                <h1>{this.state.currentMarvel.heroname}</h1>
+            <h1><span className={main.recordStyle}>
+                {`Win ${this.state.currentMarvelRecord.win} Loss ${this.state.currentMarvelRecord.loss} Draw ${this.state.currentMarvelRecord.draw}`}</span> 
+                {this.state.currentMarvel.heroname}</h1>
                  </div>
                  <div className={main.leftGridContainer}>
 
@@ -178,7 +194,9 @@ export class Main extends Component {
             </div>
             <div className={styles.right}>
                 <div className={main.fighterName}>
-                <h1>{this.state.currentDc.heroname}</h1>
+                <h1><span className={main.recordStyleDc}>
+                    {`Win ${this.state.currentDcRecord.win} Loss ${this.state.currentDcRecord.loss} Draw ${this.state.currentDcRecord.draw}`}</span>
+                    {this.state.currentDc.heroname}</h1>
                 </div>
                 <div className={main.rightGridContainer}>
                      

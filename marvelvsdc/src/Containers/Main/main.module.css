@@ -105,3 +105,19 @@ margin:auto;
       .bottomVs h1{
         font-size: 50px;
       }
+
+      .recordStyle{
+        font-size:20px;
+        float:left;
+        color:black;
+        margin-top:10px;
+        padding-left:60px;
+      }
+      
+      .recordStyleDc{
+        font-size:20px;
+        float: right;
+        color:black;
+        margin-top:10px;
+        padding-right:60px;
+      }
