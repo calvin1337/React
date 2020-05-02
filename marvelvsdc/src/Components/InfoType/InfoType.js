@@ -24,9 +24,7 @@ export class InfoType extends Component {
         <div className={styles.taleTapeType}>
             <h1>Powers</h1>
         </div>
-        <div className={styles.taleTapeType}>
-            <h1>Enemy's</h1>
-        </div>
+        
   </div>
         )
     }

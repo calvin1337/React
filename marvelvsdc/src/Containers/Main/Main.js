@@ -27,6 +27,14 @@ export class Main extends Component {
 
             },
 
+            currentMarvelRecord: {
+
+            },
+
+            currentDcRecord:{
+
+            },
+
             showModal: true
             
         }
@@ -60,7 +68,7 @@ export class Main extends Component {
                 for(let key in res.data){
                     character.push({
                         ...res.data[key],
-                        id: key
+                        id: key,
                     });
                 }
                 this.setState({dc: character}, () => {
@@ -72,6 +80,7 @@ export class Main extends Component {
 
         randomDcCharacter = (number) => {
             this.setState({currentDc: this.state.dc[number]})
+
         }
 
         randomMarvelCharacter = (number) => {
@@ -104,12 +113,29 @@ export class Main extends Component {
         }
 
     marvelWin = () => {
-        alert("Marvel WIN")
+        this.dcLoss()
+        console.log()
+
     }
     
-    dcWin = (id) => {
-        alert("DC WIN")
+    dcWin = () => {
+        this.marvelLoss()
     }
+
+    marvelLoss = () => {
+        let data = this.state.currentDc.record;
+        Object.keys(data).map((obj, i) => {
+            return (
+                console.log(obj + " " + data[obj])
+                )
+            })
+    }
+
+    dcLoss = () => {
+
+    }
+
+    
 
     render() {
             
