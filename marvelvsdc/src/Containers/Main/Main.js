@@ -121,7 +121,22 @@ export class Main extends Component {
         }
 
         tieGame = () => {
-            //    alert(this.state.currentMarvel.record.loss)
+            this.setState({disableBtn: true})
+
+            this.setState({currentMarvelRecord : {
+                ...this.state.currentMarvelRecord,
+                draw: this.state.currentMarvelRecord.draw + 1
+            }}, () => {
+                this.updateMarvelState(this.state.currentMarvel.id);
+            })
+    
+           this.setState({currentDcRecord : {
+                ...this.state.currentDcRecord,
+                draw: this.state.currentDcRecord.draw + 1
+            }}, () => {
+                this.updateDcState(this.state.currentDc.id);
+            })
+            
         }
 
         closeModal = (e) => {
@@ -174,6 +189,26 @@ export class Main extends Component {
         })        
     }   
 
+   
+    
+    dcWin = () => {
+        this.setState({disableBtn: true})
+
+        this.setState({currentMarvelRecord : {
+            ...this.state.currentMarvelRecord,
+            loss: this.state.currentMarvelRecord.loss + 1
+        }}, () => {
+            this.updateMarvelState(this.state.currentMarvel.id);
+        })
+
+       this.setState({currentDcRecord : {
+            ...this.state.currentDcRecord,
+            win: this.state.currentDcRecord.win + 1
+        }}, () => {
+            this.updateDcState(this.state.currentDc.id);
+        })
+    }
+
     updateDcState = (id) => {
         
         this.state.dc.map(hero => {
@@ -196,26 +231,6 @@ export class Main extends Component {
     
         
 
-    
-    dcWin = () => {
-        this.setState({disableBtn: true})
-
-        this.setState({currentMarvelRecord : {
-            ...this.state.currentMarvelRecord,
-            loss: this.state.currentMarvelRecord.loss + 1
-        }}, () => {
-            this.updateMarvelState(this.state.currentMarvel.id);
-        })
-
-       this.setState({currentDcRecord : {
-            ...this.state.currentDcRecord,
-            win: this.state.currentDcRecord.win + 1
-        }}, () => {
-            this.updateDcState(this.state.currentDc.id);
-        })
-    }
-
-   
        
     
 
@@ -230,7 +245,7 @@ export class Main extends Component {
                 <div className={main.fighterName}>
             <h1>
             <span className={main.recordStyle}>
-                {`Win ${this.state.currentMarvelRecord.win} Loss ${this.state.currentMarvelRecord.loss} Draw ${this.state.currentMarvelRecord.draw}`}
+                {`Win ${this.state.currentMarvelRecord.win}  Draw ${this.state.currentMarvelRecord.draw} Loss ${this.state.currentMarvelRecord.loss}`}
                 </span> 
                 {this.state.currentMarvel.heroname}</h1>
                  </div>
@@ -263,7 +278,7 @@ export class Main extends Component {
             <div className={styles.right}>
                 <div className={main.fighterName}>
                 <h1><span className={main.recordStyleDc}>
-                    {`Win ${this.state.currentDcRecord.win} Loss ${this.state.currentDcRecord.loss} Draw ${this.state.currentDcRecord.draw}`}</span>
+                    {`Win ${this.state.currentDcRecord.win} Draw ${this.state.currentDcRecord.draw} Loss ${this.state.currentDcRecord.loss} `}</span>
                     {this.state.currentDc.heroname}</h1>
                 </div>
                 <div className={main.rightGridContainer}>
@@ -273,7 +288,7 @@ export class Main extends Component {
                     <img src={this.state.currentDc.img} width="100%" height="420px"></img>
 
                         <div className={main.winnerBtn}>
-                        <Button onClick={this.dcWin} btnType="winBtn">Wins</Button>
+                        <Button disabled={this.state.disableBtn} onClick={this.dcWin} btnType="winBtn">Wins</Button>
 
                         </div>
                     
@@ -313,7 +328,7 @@ export class Main extends Component {
 
 
             <div className={main.tieButton}>
-            <Button onClick={this.tieGame} btnType="tieBtn">Tie</Button>
+            <Button disabled={this.state.disableBtn} onClick={this.tieGame} btnType="tieBtn">Tie</Button>
             </div>
 
             <div className={main.bottomVs}>
