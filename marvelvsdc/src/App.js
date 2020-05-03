@@ -11,7 +11,7 @@ export class App extends Component {
 
     return (
       <div className="app">
-        <Router>
+        <Router basename="marvelvsdc">
         <NavBar />
 
         <Route path="/" exact render={props => (
