@@ -162,8 +162,16 @@ export class Main extends Component {
              hero.record = this.state.currentMarvelRecord
              
          }})
-         
-         this.randomFighters();
+
+         this.state.marvel.map(hero => {
+            if(hero.id === id){
+                let data = {
+                    ...this.state.currentMarvelRecord
+                }
+                axios.put(`https://marvelvsdc-6041d.firebaseio.com/marvel/${id}/record.json`, data)
+                .then(res => this.randomFighters());
+            }
+        })        
     }   
 
     updateDcState = (id) => {
@@ -181,7 +189,7 @@ export class Main extends Component {
                     ...this.state.currentDcRecord
                 }
                 axios.put(`https://marvelvsdc-6041d.firebaseio.com/dc/${id}/record.json`, data)
-                .then(res => console.log(res.data));
+                .then(res => console.log(res));
             }
     }  
  )}
@@ -190,7 +198,21 @@ export class Main extends Component {
 
     
     dcWin = () => {
-        
+        this.setState({disableBtn: true})
+
+        this.setState({currentMarvelRecord : {
+            ...this.state.currentMarvelRecord,
+            loss: this.state.currentMarvelRecord.loss + 1
+        }}, () => {
+            this.updateMarvelState(this.state.currentMarvel.id);
+        })
+
+       this.setState({currentDcRecord : {
+            ...this.state.currentDcRecord,
+            win: this.state.currentDcRecord.win + 1
+        }}, () => {
+            this.updateDcState(this.state.currentDc.id);
+        })
     }
 
    
