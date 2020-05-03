@@ -39,7 +39,8 @@ export class Main extends Component {
                 draw: 0
             },
 
-            showModal: true
+            showModal: true,
+            disableBtn : false
             
         }
 
@@ -97,6 +98,7 @@ export class Main extends Component {
         randomMarvelCharacter = (number) => {
             this.setState({currentMarvel: this.state.marvel[number]})
             this.getMarvelRecord(number)
+            this.setState({disableBtn: false})
         }
 
         getMarvelRecord = (number) => {
@@ -133,39 +135,57 @@ export class Main extends Component {
        
 
     marvelWin = () => {
-        let prevState = this.state.currentMarvelRecord.win
+        this.setState({disableBtn: true})
+
         this.setState({currentMarvelRecord : {
             ...this.state.currentMarvelRecord,
             win: this.state.currentMarvelRecord.win + 1
-        }})
+        }}, () => {
+            this.updateMarvelState(this.state.currentMarvel.id);
+        })
+
        this.setState({currentDcRecord : {
             ...this.state.currentDcRecord,
             loss: this.state.currentDcRecord.loss + 1
         }}, () => {
-            this.updateState(this.state.currentMarvel.id);
+            this.updateDcState(this.state.currentDc.id);
         })
         
         
     }
 
-    updateState = (id) => {
+    updateMarvelState = (id) => {
         
         this.state.marvel.map(hero => {
             if(hero.id === id){
              
              hero.record = this.state.currentMarvelRecord
-            
-           
-                
+             
          }})
-        
+         
+         this.randomFighters();
     }   
-    
 
-    componentDidUpdate(prevState) {
+    updateDcState = (id) => {
         
-       
-      }
+        this.state.dc.map(hero => {
+            if(hero.id === id){
+             
+             hero.record = this.state.currentDcRecord
+
+         }})
+
+         this.state.dc.map(hero => {
+            if(hero.id === id){
+                let data = {
+                    ...this.state.currentDcRecord
+                }
+                axios.put(`https://marvelvsdc-6041d.firebaseio.com/dc/${id}/record.json`, data)
+                .then(res => console.log(res.data));
+            }
+    }  
+ )}
+    
         
 
     
@@ -186,8 +206,10 @@ export class Main extends Component {
 
             <div className={styles.left}>
                 <div className={main.fighterName}>
-            <h1><span className={main.recordStyle}>
-                {`Win ${this.state.currentMarvelRecord.win} Loss ${this.state.currentMarvelRecord.loss} Draw ${this.state.currentMarvelRecord.draw}`}</span> 
+            <h1>
+            <span className={main.recordStyle}>
+                {`Win ${this.state.currentMarvelRecord.win} Loss ${this.state.currentMarvelRecord.loss} Draw ${this.state.currentMarvelRecord.draw}`}
+                </span> 
                 {this.state.currentMarvel.heroname}</h1>
                  </div>
                  <div className={main.leftGridContainer}>
@@ -197,7 +219,7 @@ export class Main extends Component {
                     <img src={this.state.currentMarvel.img} width="100%" height="420px"></img>
 
                     <div className={main.winnerBtn}>
-                    <Button onClick={this.marvelWin} btnType="winBtn">Wins</Button>
+                    <Button disabled={this.state.disableBtn} onClick={this.marvelWin} btnType="winBtn">Wins</Button>
                     </div>
                     </div>
                     <div className={main.infoContainer}>

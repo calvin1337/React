@@ -70,6 +70,13 @@ margin:auto;
     
     }
 
+    button:disabled,
+    button[disabled],
+    button[disabled]:hover{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
     .tieButton{
       height:92px;
       border: 1px solid black;
