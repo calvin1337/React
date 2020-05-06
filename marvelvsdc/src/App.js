@@ -11,7 +11,7 @@ export class App extends Component {
 
     return (
       <div className="app">
-        <Router basename="marvelvsdc">
+        <Router basename={process.env.PUBLIC_URL} >
         <NavBar />
 
         <Route path="/" exact render={props => (
