@@ -8,7 +8,7 @@ function NavigationBar() {
        <Navbar style={navbarStyle} expand="lg" bg="dark" variant="dark">
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
-        <Navbar.Brand ><img height="100" src={logo}></img></Navbar.Brand>
+        <Navbar.Brand ><img height="100" alt="Company Logo" src={logo}></img></Navbar.Brand>
         <Nav className="ml-auto">
 
         <LinkContainer exact to="/">

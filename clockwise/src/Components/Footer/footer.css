@@ -1,0 +1,42 @@
+footer {
+    background:#212529;
+    color: white;
+    margin-top:0px;
+  }
+  
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+  
+  footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+  }
+  
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+  
+  .footer-middle {
+    padding-top: 2em;
+    color: white;
+  }
+
+  .footertitle{
+    font-size:14px;
+    border-bottom: 1px solid #B17B1A;
+}
+
+
+.address{
+    list-style-type: none;
+}
+
+footer img{
+    width:auto;
+    height:70px;
+}
