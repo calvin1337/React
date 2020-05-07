@@ -1,33 +1,46 @@
 import React from 'react'
-import logo from "./../../images/logo2.png"
-import { Navbar, Nav, NavItem, NavLink} from "react-bootstrap"
+import logo from "./../../images/logowhite.png"
+import { Navbar, Nav, NavItem,} from "react-bootstrap"
+import { LinkContainer } from "react-router-bootstrap";
 
 function NavigationBar() {
     return (
        <Navbar style={navbarStyle} expand="lg" bg="dark" variant="dark">
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-        <Navbar.Brand href="#home"><img height="100" src={logo}></img></Navbar.Brand>
+        <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
+        <Navbar.Brand ><img height="100" src={logo}></img></Navbar.Brand>
         <Nav className="ml-auto">
 
+        <LinkContainer exact to="/">
         <NavItem>
-            <NavLink>Home</NavLink>
+            <Nav.Link >Home</Nav.Link>
         </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/about">
         <NavItem>
-            <NavLink>About</NavLink>
+            <Nav.Link >About</Nav.Link>
         </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/services">
         <NavItem>
-            <NavLink>Services</NavLink>
+            <Nav.Link>Services</Nav.Link>
         </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/projects">
         <NavItem>
-            <NavLink>Projects</NavLink>
+            <Nav.Link >Projects</Nav.Link>
         </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/news">
         <NavItem>
-            <NavLink>News</NavLink>
+            <Nav.Link  >News</Nav.Link>
         </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/contact">
         <NavItem>
-            <NavLink>Contact</NavLink>
+            <Nav.Link >Contact</Nav.Link>
         </NavItem>
+        </LinkContainer>
         </Nav>
         </Navbar.Collapse>
        </Navbar>
