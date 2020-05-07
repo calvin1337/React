@@ -56,7 +56,7 @@ function Footer() {
                          <li>01234 567890</li>
                          <li>info@clockwise-tech.com</li>
                     </ul>
-                        <img src={Logo}></img>
+                        <img alt="company logo" src={Logo}></img>
 
                 </Col>
               </Row>
