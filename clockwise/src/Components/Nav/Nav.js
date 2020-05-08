@@ -7,9 +7,11 @@ import { LinkContainer } from "react-router-bootstrap";
 function NavigationBar() {
     return (
        <Navbar fixed="top" className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
+        
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
-        <Navbar.Brand ><img height="100" alt="Company Logo" src={logo}></img></Navbar.Brand>
+        
+        <Navbar.Brand><img height="100" alt="Company Logo" src={logo}></img></Navbar.Brand>
         <Nav className="ml-auto">
 
         <LinkContainer exact to="/">
@@ -44,6 +46,7 @@ function NavigationBar() {
         </LinkContainer>
         </Nav>
         </Navbar.Collapse>
+       
        </Navbar>
     )
 }
@@ -51,6 +54,7 @@ function NavigationBar() {
 const navbarStyle = {
     fontSize: "20px",
     zIndex: "1200 !important",
+    width: "100%"
 }
 
 export default NavigationBar

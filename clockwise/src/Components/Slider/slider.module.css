@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	transform: translateY(-50%);
-	z-index: 2;
+	z-index: 100;
 }
 
 .control {
@@ -36,29 +36,26 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
-	
+	box-shadow: 0 0 30px #333;
 }
 .titleContainer{
 	position: absolute;
 	top:0;
 	left:0;
-	z-index:10000;
 	background-color: none;
 	opacity: 1;
 	height: 100vh;
 	width:100%;
 }
 
- h1{
+ .titleContainer h1{
 	display:flex;
 	align-items: center;
 	justify-content: center;
 	justify-items: center;
 	padding-bottom:100px;
-	height:100%;
-	width:100%;
 	color:white;
-	
+	height: 100%;
 }
 
 
