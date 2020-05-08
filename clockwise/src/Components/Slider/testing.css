@@ -1,0 +1,15 @@
+.slick-dots {
+	background-color: #fff;
+	cursor: pointer;
+	opacity: 0.5;
+	margin: 6px;
+	height: 40px;
+	width: 5px;
+	transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.slick-dots.active, .slick-dots:hover {
+	background-color: #fff;
+	opacity: 1;
+	transform: scale(1.2);
+}
