@@ -28,13 +28,13 @@ export class HomeSlider extends Component {
           <div>
             <Slider className={styles.sliderContainer} ref={c => (this.slider = c)} {...settings}>
         <div className={styles.slide} key={0} >
-          <h3>1</h3>
+          <h3>Image One</h3>
         </div>
         <div  className={styles.slide} key={1} >
-          <h3>2</h3>
+          <h3>Image Two</h3>
         </div>
         <div  className={styles.slide} key={2} >
-          <h3>3</h3>
+          <h3>Image Three</h3>
         </div>
       </Slider>
       <div  className={styles.controlsContainer}>

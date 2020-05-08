@@ -35,15 +35,14 @@
 	position: relative;
 	height: 100vh;
 	width: 100vw;
+	background-color:grey;
 }
 
 
 
 .sliderContainer::after {
-	background-color: #000;
 	content: '';
 	position: absolute;
-	opacity: 0.3;
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -51,16 +50,20 @@
 	z-index: 1;
 }
 
-.slide {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	height: 100%;
-	width: 100%;
-	transform: scale(1.15);
-	transition: opacity .6s ease;
+.slide{
+	z-index: 1010;
+	position: relative;
+	height: 100vh;
+	width:100%;
+
+}
+
+
+.slide h3{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	height: 100vh;
 }
