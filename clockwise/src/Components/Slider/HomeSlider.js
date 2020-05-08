@@ -17,7 +17,7 @@ export class HomeSlider extends Component {
     render() {
 
         var settings = {
-            useCSS: false,
+            useCSS: true,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
@@ -26,14 +26,14 @@ export class HomeSlider extends Component {
 
         return (
           <div>
-            <Slider  ref={c => (this.slider = c)} {...settings}>
-        <div key={0} >
+            <Slider className={styles.sliderContainer} ref={c => (this.slider = c)} {...settings}>
+        <div className={styles.slide} key={0} >
           <h3>1</h3>
         </div>
-        <div key={1} >
+        <div  className={styles.slide} key={1} >
           <h3>2</h3>
         </div>
-        <div key={2} >
+        <div  className={styles.slide} key={2} >
           <h3>3</h3>
         </div>
       </Slider>

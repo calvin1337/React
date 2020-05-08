@@ -1,38 +1,4 @@
-.slide {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	    padding-top:150px;
 
-}
-
-
-.sliderContainer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	position: relative;
-	height: 100vh;
-    width: 100%;
-
-}
-
-
-
-.sliderContainer::after {
-	background-color: #000;
-	content: '';
-	position: absolute;
-	opacity: 0.3;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-}
 
 .controlsContainer {
 	position: absolute;
@@ -58,4 +24,43 @@
 	background-color: #fff;
 	opacity: 1;
 	transform: scale(1.2);
+}
+
+
+.sliderContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+}
+
+
+
+.sliderContainer::after {
+	background-color: #000;
+	content: '';
+	position: absolute;
+	opacity: 0.3;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.slide {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	transform: scale(1.15);
+	transition: opacity .6s ease;
 }

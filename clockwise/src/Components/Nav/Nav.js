@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function NavigationBar() {
     return (
-       <Navbar className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
+       <Navbar fixed="top" className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
         <Navbar.Brand ><img height="100" alt="Company Logo" src={logo}></img></Navbar.Brand>
