@@ -1,27 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto&display=swap');
 
-.inner {
-    max-width: 82em;
-    width: calc(100% - 6em);
-    margin: 0 auto;
-    padding-top:100px;
-    text-align:center;
-}
-
-
-.inner h1{
-    font-size: 50px;
-    margin-bottom: 40px;
-    color: #B17B1A;
-    font: bolder;
-}
-
-.inner p {
-    line-height: 1.5;
-    font-size: 26px;
-    font: normal;
-    color: #444444;
-    font-family: sans-serif;
-}
 
 .sectionTitle{
     font-size: 2.25rem;
@@ -30,11 +8,12 @@
     margin: 0.39em 0 0.61em;
     padding-bottom: 0.28em;
     position: relative;
+    font-family:'Lato', sans-serif;
 }
 
 .sectionTitle::after{
     content: "";
-    background-color: #ff8e31;
+    background-color: #B17B1A;
     width: 80px;
     height: 2px;
     position: absolute;
@@ -47,4 +26,56 @@
     color: #1f252e;
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-family: 'Lato', sans-serif;
+    font-weight:400;
+}
+
+.aboutInfo{
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+font-size: 1rem;
+-webkit-font-smoothing: antialiased;
+overflow-x: hidden;
+}
+
+p{
+  color:#1f252e;
+  line-height: 1.8em;
+}
+
+.img-container{
+position: relative;
+top: -25px;
+}
+
+.img-container img {
+    position: absolute;
+    -webkit-box-shadow: 0 0 50px 0 #999999;
+    -moz-box-shadow: 0 0 50px 0 #999999;
+    -o-box-shadow: 0 0 50px 0 #999999;
+    -ms-box-shadow: 0 0 50px 0 #999999;
+    box-shadow: 0 0 50px 0 #999999;
+}
+
+.img-container img:first-child {
+    top: 0;
+    left: 220px;
+    z-index: 9;
+    height:245px;
+    width:235px;
+}
+
+.img-container img:nth-child(2) {
+    top: 150px;
+    right: 220px;
+    z-index: 10;
+    height:337px;
+    width:248px;
+}
+
+ .img-container img:nth-child(3) {
+    top: 190px;
+    right: 0;
+    height:245px;
+   width:235px;
 }
