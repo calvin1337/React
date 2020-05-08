@@ -27,15 +27,38 @@
 }
 
 
+
 .sliderContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 	position: relative;
+	height: 100%;
+	width: 100%;
+	
+}
+.titleContainer{
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:10000;
+	background-color: none;
+	opacity: 1;
 	height: 100vh;
-	width: 100vw;
-	background-color:grey;
+	width:100%;
+}
+
+ h1{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+	padding-bottom:100px;
+	height:100%;
+	width:100%;
+	color:white;
+	
 }
 
 
@@ -47,14 +70,19 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-	z-index: 1;
+	
 }
 
 .slide{
-	z-index: 1010;
 	position: relative;
 	height: 100vh;
 	width:100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	top: 0;
+	left: 0;
+	
 
 }
 
@@ -66,4 +94,23 @@
 	justify-items: center;
 	align-items: center;
 	height: 100vh;
+	color: white;
+	opacity: 1;
+	z-index: 1000;
 }
+
+
+
+.one{
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../images//HomepageLanding/weldinghp2.jpeg')
+}
+
+.two {
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../images//HomepageLanding//weldinghp.jpg')
+}
+
+.three{
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../images/HomepageLanding/exoticwelding.jpg')
+
+}
+

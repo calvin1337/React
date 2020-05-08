@@ -25,24 +25,33 @@ export class HomeSlider extends Component {
           };
 
         return (
-          <div>
+          <div className={styles.darkOverlay}>
             <Slider className={styles.sliderContainer} ref={c => (this.slider = c)} {...settings}>
-        <div className={styles.slide} key={0} >
+            
+        <div className={[styles.slide, styles.one].join(" ")} key={0} >
           <h3>Image One</h3>
         </div>
-        <div  className={styles.slide} key={1} >
+        <div  className={[styles.slide, styles.two].join(" ")} key={1} >
           <h3>Image Two</h3>
         </div>
-        <div  className={styles.slide} key={2} >
+        <div  className={[styles.slide, styles.three].join(" ")} key={2} >
           <h3>Image Three</h3>
         </div>
       </Slider>
+
+      <div className={styles.titleContainer}>
+      <h1>Welcome To Clockwise</h1>
+      </div>
+      
       <div  className={styles.controlsContainer}>
       <div  onClick={() => this.changeHandler(0)} className={styles.control}></div>
       <div  onClick={() => this.changeHandler(1)} className={styles.control}></div>
       <div  onClick={() => this.changeHandler(2)} className={styles.control}></div>
     </div>
+    
     </div>
+
+    
         )
     }
 }
