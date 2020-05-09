@@ -1,26 +1,41 @@
 import React, { Component } from 'react'
 import Slider from "react-slick";
+import "./carousel.css";
+import Card from "../ServicesCard/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {faAngleDoubleRight, faAngleDoubleLeft} from "@fortawesome/free-solid-svg-icons";
+
 
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
+      <div 
+      className={className}
+      onClick={onClick}
+  >
+      <FontAwesomeIcon
+          icon={faAngleDoubleRight}
+          color="#222"
+          size="2x"
       />
+  </div>
     );
   }
 
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
+      <div 
+      className={className}
+      onClick={onClick}
+  >
+      <FontAwesomeIcon
+          icon={faAngleDoubleLeft}
+          color="#222"
+          size="2x"
       />
+  </div>
     );
   }
 
@@ -63,7 +78,7 @@ export class carousel extends Component {
         
         <Slider {...settings}>
           <div>
-            <h3>1</h3>
+            <Card />
           </div>
           <div>
             <h3>2</h3>

@@ -5,7 +5,7 @@ import {Col, Row, Container} from "react-bootstrap";
 
 function services() {
     return (
-        <div style={testing}>
+        <div className="services" style={testing}>
             <Container>
                 <Row>
                     <Col md="12">
@@ -21,6 +21,7 @@ function services() {
     )
 }
 const testing = {
-    height: "500px"
+    height: "500px",
+    
 }
 export default services
