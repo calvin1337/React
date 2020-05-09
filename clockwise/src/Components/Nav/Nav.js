@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { Component } from 'react'
 import logo from "./../../images/logowhite.png"
 import { Navbar, Nav, NavItem,} from "react-bootstrap"
 import  "./navbar.css"
 import { LinkContainer } from "react-router-bootstrap";
+import {withRouter} from "react-router"
+import PropTypes from "prop-types";
 
-function NavigationBar() {
-    return (
-       <Navbar fixed="top" className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
+
+
+export class NavigationBar extends Component {
+
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+      };
+
+    componentDidMount(){
+            if(this.props.location.pathname === "/"){
+                console.log("hello calvin")
+            }
+    }
+
+
+    render() {
+        return (
+            <Navbar fixed="top" className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
         
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
@@ -49,8 +68,12 @@ function NavigationBar() {
         </Navbar.Collapse>
        
        </Navbar>
-    )
+        )
+    }
 }
+
+
+
 
 const navbarStyle = {
     fontSize: "20px",
@@ -58,4 +81,4 @@ const navbarStyle = {
     width: "100%"
 }
 
-export default NavigationBar
+export default withRouter(NavigationBar);

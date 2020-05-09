@@ -11,6 +11,7 @@ export class HomeSlider extends Component {
   }
   
 
+
   changeHandler(e) {
     this.slider.slickGoTo(e)
     }
@@ -29,18 +30,18 @@ export class HomeSlider extends Component {
             <Slider className={styles.sliderContainer} ref={c => (this.slider = c)} {...settings}>
             
         <div className={[styles.slide, styles.one].join(" ")} key={0} >
-          <h3>Image One</h3>
+          
         </div>
         <div  className={[styles.slide, styles.two].join(" ")} key={1} >
-          <h3>Image Two</h3>
+          
         </div>
         <div  className={[styles.slide, styles.three].join(" ")} key={2} >
-          <h3>Image Three</h3>
+         
         </div>
       </Slider>
 
       <div className={styles.titleContainer}>
-      <h1>Welcome To Clockwise</h1>
+      <h1 className={styles.welcomeText}>Welcome To Clockwise</h1>
       </div>
       
       <div  className={styles.controlsContainer}>
