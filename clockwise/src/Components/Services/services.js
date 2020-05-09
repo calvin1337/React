@@ -21,7 +21,7 @@ function services() {
     )
 }
 const testing = {
-    height: "500px",
+    height: "700px",
     
 }
 export default services
