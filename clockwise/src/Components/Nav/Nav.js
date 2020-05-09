@@ -10,7 +10,7 @@ function NavigationBar() {
         
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="mr-auto text-center" id="basic-navbar-nav">
-        
+        <div className="container">
         <Navbar.Brand><img height="100" alt="Company Logo" src={logo}></img></Navbar.Brand>
         <Nav className="ml-auto">
 
@@ -45,6 +45,7 @@ function NavigationBar() {
         </NavItem>
         </LinkContainer>
         </Nav>
+        </div>
         </Navbar.Collapse>
        
        </Navbar>
