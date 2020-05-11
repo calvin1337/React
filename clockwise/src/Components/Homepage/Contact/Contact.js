@@ -8,6 +8,9 @@ export class Contact extends Component {
     render() {
         return (
         <div className="parallax">
+            <div className="section-headline-white">
+            <h2>Contact us</h2>
+            </div>
         <Container>
             <Row>
                 <Col md="4">

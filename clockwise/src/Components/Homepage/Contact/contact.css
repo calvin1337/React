@@ -5,12 +5,15 @@
   
     /* Full height */
     height: 100%; 
-    height:400px;
+    height:580px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 50px;
+padding-top: 100px;
+    
   }
 
   .contactParallax h3, .contactParallax p, .contactParallax{
@@ -21,3 +24,36 @@
      font-weight: 500;
      line-height: 1.2;
   }
+
+  .contactParallax{
+    padding-bottom: 40px;
+padding-top: 40px;
+border-radius: 20px;
+  }
+
+  .section-headline-white h2 {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 70px;
+    position: relative;
+    text-transform: capitalize;
+    font-family:'IBM Plex Mono', monospace;;
+    
+    color:white;
+  }
+  .section-headline-white{
+      text-align: center;
+  }
+  
+  .section-headline-white h2::after {
+    border: 1px solid white;
+    bottom: -20px;
+    content: "";
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 40%;
+  }
+  
