@@ -14,7 +14,11 @@ function App() {
     <div className="App">
       <Router >
       <Nav />
-      <Route Route path="/" component={Homepage} />
+      <Route Route path="/" exact component={Homepage} />
+
+      <Route path="/about" render={props => (
+        <h1>About</h1>
+      )} />
       </Router>
       <Footer />
     </div>

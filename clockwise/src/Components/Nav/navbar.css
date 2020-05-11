@@ -7,8 +7,12 @@ nav{
 
 
 .bg-dark{
+    background-color: transparent !important;
+}
+
+.navColored {
     background-color: #212529 !important;
-    /* background-color: transparent !important; */
+
 }
 
 /* .testing{

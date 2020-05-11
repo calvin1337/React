@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import logo from "./../../images/logowhite.png"
-import { Navbar, Nav, NavItem,} from "react-bootstrap"
+import { Navbar, Nav, NavItem} from "react-bootstrap"
 import  "./navbar.css"
 import { LinkContainer } from "react-router-bootstrap";
 import {withRouter} from "react-router"
@@ -18,11 +18,21 @@ export class NavigationBar extends Component {
 
     componentDidMount(){
             if(this.props.location.pathname === "/"){
-                console.log("hello calvin")
+                this.transparentNav()
             }
     }
 
-
+    transparentNav = () => {
+        window.onscroll = function() {
+            var nav = document.getElementById('navstyle');
+            if ( window.pageYOffset > 100 ) {
+                nav.classList.add("navColored")
+            } else {
+                nav.classList.remove("navColored")
+            }
+        }
+    } 
+ 
     render() {
         return (
             <Navbar fixed="top" className="bg-dark" id="navstyle" style={navbarStyle} expand="lg" bg="dark" variant="dark">
@@ -34,34 +44,22 @@ export class NavigationBar extends Component {
         <Nav className="ml-auto">
 
         <LinkContainer exact to="/">
-        <NavItem>
             <Nav.Link >Home</Nav.Link>
-        </NavItem>
         </LinkContainer>
         <LinkContainer to="/about">
-        <NavItem>
             <Nav.Link >About</Nav.Link>
-        </NavItem>
         </LinkContainer>
         <LinkContainer to="/services">
-        <NavItem>
             <Nav.Link>Services</Nav.Link>
-        </NavItem>
         </LinkContainer>
         <LinkContainer to="/projects">
-        <NavItem>
             <Nav.Link >Projects</Nav.Link>
-        </NavItem>
         </LinkContainer>
         <LinkContainer to="/news">
-        <NavItem>
             <Nav.Link  >News</Nav.Link>
-        </NavItem>
         </LinkContainer>
         <LinkContainer to="/contact">
-        <NavItem>
             <Nav.Link >Contact</Nav.Link>
-        </NavItem>
         </LinkContainer>
         </Nav>
         </div>
