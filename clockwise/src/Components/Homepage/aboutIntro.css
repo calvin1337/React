@@ -38,7 +38,7 @@ font-size: 1rem;
 overflow-x: hidden;
 }
 
-p{
+.aboutInfo p{
   color:#1f252e;
   line-height: 1.8em;
 }
