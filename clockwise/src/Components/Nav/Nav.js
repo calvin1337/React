@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import logo from "./../../images/logowhite.png"
-import { Navbar, Nav, NavItem} from "react-bootstrap"
+import { Navbar, Nav} from "react-bootstrap"
 import  "./navbar.css"
 import { LinkContainer } from "react-router-bootstrap";
 import {withRouter} from "react-router"
@@ -17,21 +17,44 @@ export class NavigationBar extends Component {
       };
 
     componentDidMount(){
-            if(this.props.location.pathname === "/"){
-                this.transparentNav()
-            }
+        if(this.props.location.pathname === "/"){
+            window.addEventListener('scroll', this.handleScroll);
+        }
+        if(this.props.location.pathname !== "/"){
+            window.removeEventListener('scroll', this.coloredNav);
+            this.coloredNav()
+        }
+        
+    }
+    
+     
+    componentDidUpdate(){
+        if(this.props.location.pathname !== "/"){
+            window.removeEventListener('scroll', this.handleScroll);
+            this.coloredNav()
+        }
+        if(this.props.location.pathname === "/"){
+            var nav = document.getElementById('navstyle')
+            nav.classList.remove("navColored")
+            window.addEventListener('scroll', this.handleScroll)
+        }
     }
 
-    transparentNav = () => {
-        window.onscroll = function() {
-            var nav = document.getElementById('navstyle');
+    handleScroll = () => {
+        var nav = document.getElementById('navstyle');
             if ( window.pageYOffset > 100 ) {
                 nav.classList.add("navColored")
             } else {
                 nav.classList.remove("navColored")
             }
-        }
-    } 
+    }
+
+    
+
+    coloredNav = () => {
+        var nav = document.getElementById('navstyle');
+        nav.classList.add("navColored")
+    }
  
     render() {
         return (
