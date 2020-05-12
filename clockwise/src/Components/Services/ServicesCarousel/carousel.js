@@ -51,7 +51,6 @@ export class carousel extends Component {
         slidesToShow: 3,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
-        dots:true,
         responsive: [
           {
             breakpoint: 768,
@@ -78,22 +77,31 @@ export class carousel extends Component {
         
         <Slider {...settings}>
           <div>
-            <Card />
+            <Card serviceTitle="Design & Engineering" />
           </div>
           <div>
-            <h3>2</h3>
+            <Card serviceTitle="Fabrication"/>
           </div>
           <div>
-            <h3>3</h3>
+            <Card serviceTitle="Aluminum Welding" />
           </div>
           <div>
-            <h3>4</h3>
+          <Card serviceTitle="Stainless Steels & Exotic Material "/>
           </div>
           <div>
-            <h3>5</h3>
+          <Card serviceTitle="Machining"/>
           </div>
           <div>
-            <h3>6</h3>
+          <Card serviceTitle="Water-jet cutting & profiling" />
+          </div>
+          <div>
+          <Card serviceTitle="Hydraulics & Piping" />
+          </div>
+          <div>
+          <Card serviceTitle="Rental Services" />
+          </div>
+          <div>
+          <Card serviceTitle="Assembly & Testing" />
           </div>
         </Slider>
       </div>
