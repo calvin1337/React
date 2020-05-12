@@ -14,7 +14,7 @@ export class ServicesCard extends Component {
      
       style={{ width: '18rem', margin: "10px"}}
     >
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={this.props.image} />
       <Card.Body >
         <Card.Title style={{fontSize: "1rem"}}>{this.props.serviceTitle}</Card.Title>
         <Card.Text className="text-muted">

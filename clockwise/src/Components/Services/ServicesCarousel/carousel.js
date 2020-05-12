@@ -3,6 +3,17 @@ import Slider from "react-slick";
 import "./carousel.css";
 import Card from "../ServicesCard/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import Welding from "../../../images/ServicesImages/exoticwelding.jpg";
+import aluminumwelding from "../../../images/ServicesImages/aluminumwelding.jpg";
+import assembly from "../../../images/ServicesImages/assembly.jpg";
+import fabrication from "../../../images/ServicesImages/fabrication.jpeg";
+import design from "../../../images/ServicesImages/designandenginering.jpg";
+import hydrolicpress from "../../../images/ServicesImages/hydrolicpress.jpg";
+import waterjet from "../../../images/ServicesImages/waterjetcutting.jpeg";
+import machining from "../../../images/ServicesImages/machining .jpeg";
+import rental from "../../../images/ServicesImages/designandenginering1.jpg"
+
 import {faAngleDoubleRight, faAngleDoubleLeft} from "@fortawesome/free-solid-svg-icons";
 
 
@@ -77,31 +88,31 @@ export class carousel extends Component {
         
         <Slider {...settings}>
           <div>
-            <Card serviceTitle="Design & Engineering" />
+            <Card image={design} serviceTitle="Design & Engineering" />
           </div>
           <div>
-            <Card serviceTitle="Fabrication"/>
+            <Card image={fabrication} serviceTitle="Fabrication"/>
           </div>
           <div>
-            <Card serviceTitle="Aluminum Welding" />
+            <Card image={aluminumwelding} serviceTitle="Aluminum Welding" />
           </div>
           <div>
-          <Card serviceTitle="Stainless Steels & Exotic Material "/>
+          <Card image={Welding} serviceTitle="Stainless Steels & Exotic Material "/>
           </div>
           <div>
-          <Card serviceTitle="Machining"/>
+          <Card image={machining} serviceTitle="Machining"/>
           </div>
           <div>
-          <Card serviceTitle="Water-jet cutting & profiling" />
+          <Card image={waterjet} serviceTitle="Water-jet cutting & profiling" />
           </div>
           <div>
-          <Card serviceTitle="Hydraulics & Piping" />
+          <Card image={hydrolicpress} serviceTitle="Hydraulics & Piping" />
           </div>
           <div>
-          <Card serviceTitle="Rental Services" />
+          <Card image={rental} serviceTitle="Rental Services" />
           </div>
           <div>
-          <Card serviceTitle="Assembly & Testing" />
+          <Card image={assembly} serviceTitle="Assembly & Testing" />
           </div>
         </Slider>
       </div>
