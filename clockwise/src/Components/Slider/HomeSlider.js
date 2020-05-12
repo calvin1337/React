@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./slider.module.css";
 import Slider from "react-slick";
+import AnimatedArrow from "../Homepage/AnimatedArrow/AnimatedArrow";
 
 
 export class HomeSlider extends Component {
@@ -41,7 +42,19 @@ export class HomeSlider extends Component {
       </Slider>
 
       <div className={styles.titleContainer}>
-      <h1 className={styles.welcomeText}>Welcome To Clockwise</h1>
+      <h1 className={styles.welcomeText}>Welcome To Clockwise
+      
+      </h1>
+      
+      <ul>
+      <AnimatedArrow text="Our Services"/>
+      <AnimatedArrow text="View Our Projects"/>
+      <AnimatedArrow text="Get In Touch"/>
+      </ul>
+
+      
+      
+      
       </div>
       
       <div  className={styles.controlsContainer}>
