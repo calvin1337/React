@@ -3,6 +3,7 @@ import HomeSlider from "../../Components/Slider/HomeSlider";
 import AboutIntro from '../../Components/Homepage/AboutIntro';
 import Services from "../../Components/Services/services";
 import Contact from "../../Components/Homepage/Contact/Contact"
+import Clients from '../../Components/Clients/Clients';
 
 function Homepage() {
     return (
@@ -12,6 +13,7 @@ function Homepage() {
             <AboutIntro />
             <Services />
             <Contact />
+            <Clients/>
         </div>
     )
 }
