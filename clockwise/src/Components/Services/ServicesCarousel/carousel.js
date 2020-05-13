@@ -11,7 +11,7 @@ import fabrication from "../../../images/ServicesImages/fabrication.jpeg";
 import design from "../../../images/ServicesImages/designandenginering.jpg";
 import hydrolicpress from "../../../images/ServicesImages/hydrolicpress.jpg";
 import waterjet from "../../../images/ServicesImages/waterjetcutting.jpeg";
-import machining from "../../../images/ServicesImages/machining .jpeg";
+import machining from "../../../images/ServicesImages/machining.jpg";
 import rental from "../../../images/ServicesImages/designandenginering1.jpg"
 
 import {faAngleDoubleRight, faAngleDoubleLeft} from "@fortawesome/free-solid-svg-icons";

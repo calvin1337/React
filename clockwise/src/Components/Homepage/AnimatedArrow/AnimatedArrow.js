@@ -5,7 +5,7 @@ export class AnimatedArrow extends Component {
     render() {
         return (
             <li>
-                <Link className="animated-arrow">
+                <Link style={{ textDecoration: 'none' }} className="animated-arrow">
                   <span class="the-arrow -left">
                      <span class="shaft"></span>
                   </span>

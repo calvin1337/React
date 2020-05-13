@@ -9,6 +9,7 @@ import AboutIntro from "./Components/Homepage/AboutIntro";
 
 import Nav from "./Components/Nav/Nav"
 import Footer from "./Components/Footer/Footer";
+import Services from './Containers/Services/Services';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <Nav />
       <Route Route path="/" exact component={Homepage} />
 
-      <Route path="/about" render={AboutIntro} />
+      <Route path="/about/" render={props => (
+        <Services />
+      )} />
       </Router>
       <Footer />
     </div>

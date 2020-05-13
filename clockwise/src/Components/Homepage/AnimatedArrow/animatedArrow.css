@@ -5,6 +5,7 @@
   .animated-arrow{
     font-family: 'Playfair Display', serif;
     font-size: 16px;
+    text-decoration: none;
 }
 .the-arrow {
     width: 64px;
@@ -75,7 +76,7 @@
 }
 .animated-arrow {
     display: inline-block;
-    color: #999;
+    color: white;
     font-size: 1.25em;
     font-style: italic;
     text-decoration: none;
